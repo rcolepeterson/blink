@@ -65,14 +65,14 @@ const Blink = ({ startTrackingBlink, onBlinkStarted, onUserLoses }) => {
   return (
     <div>
       {!initialized && (
-        <h1 className=" text-orange-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
-          loading
-        </h1>
+        <h2 className=" text-orange-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-8 ">
+          loading ...
+        </h2>
       )}
       {userBlinked && (
-        <h1 className=" text-orange-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+        <h2 className=" text-orange-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-8 ">
           You blinked!
-        </h1>
+        </h2>
       )}
       <video
         style={{ opacity: showProfile ? "1" : "0" }}
