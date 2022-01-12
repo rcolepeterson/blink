@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import blinkdetection from "../components/blinkdetection.js";
 
-const Blink = ({ start, onBlinkStarted }) => {
+const Blink = ({ startTrackingBlink, onBlinkStarted, showUser = true }) => {
   const requestRef = React.useRef();
   const videoRef = React.useRef();
   const running = React.useRef(0);
+  const [showProfile, setShowProfile] = useState(true);
+  const [initialized, setInitialized] = useState(false);
 
   // this function returns a random color value
   const getRandomColor = () => {
@@ -16,9 +18,35 @@ const Blink = ({ start, onBlinkStarted }) => {
     return color;
   };
 
+  const predict = async () => {
+    // let result = await blinkdetection.getBlinkPrediction();
+    console.log("we are predicting");
+
+    if (!running.current) {
+      running.current = true;
+
+      onBlinkStarted();
+      setShowProfile(false);
+    }
+
+    // if (result) {
+    //   //console.log("Blink Result: ", result.blink); // will return an object indicating the booleans for different states
+    //   if (result.blink) {
+    //     // setState((prev) => ({
+    //     //   ...prev,
+    //     //   myColor: getRandomColor(),
+    //     //   blinkCount: prev.blinkCount + 1,
+    //     // }));
+    //     console.log("________________Did Blink: ", result.blink); // will return an object indicating the booleans for different states
+    //   }
+    // }
+    // requestRef.current = requestAnimationFrame(predict);
+    // predict();
+  };
+
   // const predict = async () => {
+  //   // console.log("predict", startTrackingBlink);
   //   let result = await blinkdetection.getBlinkPrediction();
-  //   console.log("we are predicting");
 
   //   if (!running.current) {
   //     running.current = true;
@@ -26,7 +54,7 @@ const Blink = ({ start, onBlinkStarted }) => {
   //   }
 
   //   if (result) {
-  //     // console.log("Blink Result: ", result.blink); // will return an object indicating the booleans for different states
+  //     console.log("Blink Result: ", result.blink); // will return an object indicating the booleans for different states
   //     if (result.blink) {
   //       // setState((prev) => ({
   //       //   ...prev,
@@ -36,40 +64,17 @@ const Blink = ({ start, onBlinkStarted }) => {
   //       console.log("Did Blink: ", result.blink); // will return an object indicating the booleans for different states
   //     }
   //   }
-  //   requestRef.current = requestAnimationFrame(predict);
+  //   if (startTrackingBlink) {
+  //     console.log("requesting animation frame", startTrackingBlink);
+  //     requestRef.current = requestAnimationFrame(predict);
+  //   }
   // };
-
-  const predict = async () => {
-    console.log("predict", start);
-    let result = await blinkdetection.getBlinkPrediction();
-
-    console.log("lets go", start);
-    if (!running.current) {
-      running.current = true;
-      onBlinkStarted();
-    }
-    console.log("lets go 2", start);
-    if (result) {
-      // console.log("Blink Result: ", result.blink); // will return an object indicating the booleans for different states
-      if (result.blink) {
-        // setState((prev) => ({
-        //   ...prev,
-        //   myColor: getRandomColor(),
-        //   blinkCount: prev.blinkCount + 1,
-        // }));
-        console.log("Did Blink: ", result.blink); // will return an object indicating the booleans for different states
-      }
-    }
-    if (start) {
-      console.log("requesting animation frame", start);
-      requestRef.current = requestAnimationFrame(predict);
-    }
-  };
 
   const init = async () => {
     await blinkdetection.loadModel();
     await blinkdetection.setUpCamera(videoRef.current);
     console.log("we have initialized");
+    setInitialized(true);
   };
 
   const startPrediction = () => {
@@ -78,40 +83,43 @@ const Blink = ({ start, onBlinkStarted }) => {
   };
 
   const stopPrediction = () => {
-    console.log("stop prediction", start);
+    console.log("stop prediction", startTrackingBlink);
     // blinkdetection.stopPrediction();
     // cancelAnimationFrame(requestRef.current);
     // running.current = false;
   };
 
   useEffect(() => {
-    console.log("we are watching start", start);
-    if (start) {
+    console.log("we are watching start", startTrackingBlink);
+    if (startTrackingBlink) {
       startPrediction();
     } else {
       stopPrediction();
     }
-  }, [start]);
+  }, [startTrackingBlink]);
 
   useEffect(() => {
     init();
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full">
-      <div>
-        <div className="flex flex-col items-center justify-center w-20 h-20">
-          <h4>BLINK</h4>
-        </div>
-      </div>
-      {/* <video ref={videoRef} playsInline></video> */}
-      <div className="relative w-[500px]">
-        <video
-          className="rounded-full border-8  border-red-600 shadow-md"
-          ref={videoRef}
-          playsInline
-        ></video>
-      </div>
+    // <div className="flex flex-col items-center justify-center w-full">
+    //   <div className="relative w-[500px] mr-[10px] mt-[80px]">
+    //     <video className="video-circle" ref={videoRef} playsInline></video>
+    //   </div>
+    // </div>
+    <div>
+      {!initialized && (
+        <h1 className=" text-orange-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+          loading
+        </h1>
+      )}
+      <video
+        style={{ display: showProfile ? "block" : "none" }}
+        className="video-circle"
+        ref={videoRef}
+        playsInline
+      ></video>
     </div>
   );
 };

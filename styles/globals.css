@@ -50,6 +50,7 @@ a {
   width: 500px;
   height: 500px;
   border-radius: 50%;
+  margin-left: -50px;
 }
 
 .video-circle {
@@ -57,4 +58,26 @@ a {
   object-fit: cover;
   height: 500px;
   border: 5px solid #d00a2c;
+  margin: 5px;
+}
+
+#blackcircle {
+  background-color: #d00a2c;
+  width: 540px;
+  height: 540px;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+#whitecircle {
+  background-color: white;
+
+  width: 510px;
+  height: 510px;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: calc(50% - (510px / 2));
+  left: calc(50% - (510px / 2));
+  margin: 0 auto;
 }

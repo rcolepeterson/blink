@@ -26,6 +26,7 @@ const Home = () => {
   const [startTimer, setStartTimer] = useState(false);
   const [loader, setLoader] = useState(false);
   const [score, setScore] = useState(getRandomInt(10, 1000));
+  const [gameStarted, setGameStarted] = useState(false);
 
   const onBlinkStarted = () => {
     setLoader(false);
@@ -39,7 +40,12 @@ const Home = () => {
       </div>
       <div className="flex flex-col items-center justify-center w-full h-screen mb-12">
         <RivalVideo />
-        <Timer />
+        {/* <div className="absolute top-0">
+          <Blink showUser={!gameStarted} />
+        </div> */}
+        <div className="mt-8">
+          <Timer />
+        </div>
       </div>
     </div>
     // <div className="flex flex-col items-center justify-center w-full h-screen">
