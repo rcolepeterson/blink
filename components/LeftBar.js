@@ -5,7 +5,7 @@ const LeftBar = ({ score = "2,390,927", level = "1", ranking = "0" }) => {
       <img src={logo} alt="logo" />
       <div className="mt-2 shadRed">
         <h1 className="uppercase">Don&apos;t Break</h1>
-        <h1 className="uppercase -mt-3">For a break</h1>
+        <h1 className="uppercase -mt-3">Get a break</h1>
       </div>
       <div className="mt-10">
         <h4 className="">Current Score:</h4>
