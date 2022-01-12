@@ -3,17 +3,17 @@ const LeftBar = ({ score = "2,390,927", level = "1", ranking = "0" }) => {
   return (
     <div className="left-bar">
       <img src={logo} alt="logo" />
-      <div className="mt-10">
+      <div className="mt-2 shadRed">
         <h1 className="uppercase">Don&apos;t Break</h1>
-        <h1 className="uppercase">For a break</h1>
+        <h1 className="uppercase -mt-3">For a break</h1>
       </div>
       <div className="mt-10">
-        <h4 className="">Current Score</h4>
+        <h4 className="">Current Score:</h4>
         <h2 className="">{score.toLocaleString("en-US")}</h2>
       </div>
 
       <div className="mt-6">
-        <h4 className="">Level</h4>
+        <h4 className="">Level:</h4>
         <h2 className="">{level}</h2>
       </div>
       <div className="mt-6">

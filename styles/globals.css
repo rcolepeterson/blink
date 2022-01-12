@@ -81,3 +81,11 @@ a {
   left: calc(50% - (510px / 2));
   margin: 0 auto;
 }
+
+.numbers {
+  text-shadow: 4px 4px #272727;
+}
+
+.shadRed {
+  text-shadow: 4px 6px #d00a2c;
+}
