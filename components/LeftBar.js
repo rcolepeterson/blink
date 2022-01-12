@@ -4,7 +4,7 @@ const LeftBar = () => {
     <div className="left-bar">
       <img src={logo} alt="logo" />
       <div className="mt-10">
-        <h1 className="uppercase">Don't Break</h1>
+        <h1 className="uppercase">Don&apos;t Break</h1>
         <h1 className="uppercase">For a break</h1>
       </div>
       <div className="mt-10">
