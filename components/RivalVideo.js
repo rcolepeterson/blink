@@ -83,12 +83,12 @@ const RivalVideo = ({ onStarted, onEnded }) => {
                 onUserLoses={onUserLoses}
               />
             </div>
-            {!gameStarted && (
+            {/* {!gameStarted && (
               <img
                 src="./internationalStaring.png"
                 className="absolute top-[90px] w-[425px] left-1/2 transform -translate-x-1/2"
               />
-            )}
+            )} */}
 
             <button
               style={{ display: gameStarted ? "none" : "block" }}
