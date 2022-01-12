@@ -69,7 +69,10 @@
 
 import React, { useState, useEffect } from "react";
 
-const Stopwatch = ({ doRun = false, onUpdate }) => {
+const Stopwatch = ({
+  doRun = false,
+  onUpdate = () => console.log("update"),
+}) => {
   const [time, setTime] = useState(0);
   const [running, setRunning] = useState(doRun);
   useEffect(() => {
@@ -87,6 +90,10 @@ const Stopwatch = ({ doRun = false, onUpdate }) => {
   useEffect(() => {
     setRunning(doRun);
   }, [doRun]);
+
+  useEffect(() => {
+    onUpdate(time);
+  }, [time]);
 
   return (
     <div className="stopwatch">

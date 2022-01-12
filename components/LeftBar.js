@@ -1,4 +1,4 @@
-const LeftBar = () => {
+const LeftBar = ({ score = "2,390,927" }) => {
   const logo = "/logo.png";
   return (
     <div className="left-bar">
@@ -9,7 +9,7 @@ const LeftBar = () => {
       </div>
       <div className="mt-10">
         <h4 className="">Current Score</h4>
-        <h2 className="">2,390,928</h2>
+        <h2 className="">{score.toLocaleString("en-US")}</h2>
       </div>
 
       <div className="mt-6">

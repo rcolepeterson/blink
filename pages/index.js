@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Blink from "../components/Blink";
 import RivalVideo from "../components/RivalVideo";
-import AnimatedNumber from "react-animated-number";
+// import AnimatedNumber from "react-animated-number";
 import { useCountUp } from "react-countup";
 import Timer from "../components/Timer";
 import LeftBar from "../components/LeftBar";
@@ -31,18 +31,37 @@ const Home = () => {
     // setLoader(false);
     console.log("ok dude, lets start", startTimer);
     setStartTimer(true);
+    setRunning(true);
   };
 
   const onBlinkEnded = () => {
     // setLoader(false);
     console.log("ok dude, lets end", startTimer);
     setStartTimer(false);
+    setRunning(false);
+  };
+
+  const [running, setRunning] = useState(false);
+  useEffect(() => {
+    let interval;
+    if (running) {
+      interval = setInterval(() => {
+        setScore((prevTime) => prevTime + 1243);
+      }, 1000);
+    } else if (!running) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [running]);
+
+  const onUpdate = (value) => {
+    // setScore(value);
   };
 
   return (
     <div>
       <div className="absolute p-10 top-0 left-0">
-        <LeftBar />
+        <LeftBar score={score} />
       </div>
       <div className="flex flex-col items-center justify-center w-full h-screen mb-12">
         <RivalVideo onStarted={onBlinkStarted} onEnded={onBlinkEnded} />
@@ -50,7 +69,7 @@ const Home = () => {
           <Blink showUser={!gameStarted} />
         </div> */}
         <div className="mt-8">
-          <Timer doRun={startTimer} />
+          <Timer doRun={startTimer} onUpdate={onUpdate} />
         </div>
       </div>
     </div>
