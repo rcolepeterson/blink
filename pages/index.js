@@ -32,6 +32,7 @@ const Home = () => {
     console.log("ok dude, lets start", startTimer);
     setStartTimer(true);
     setRunning(true);
+    setRunLevel(true);
   };
 
   const onBlinkEnded = () => {
@@ -39,6 +40,7 @@ const Home = () => {
     console.log("ok dude, lets end", startTimer);
     setStartTimer(false);
     setRunning(false);
+    setRunLevel(false);
   };
 
   const [running, setRunning] = useState(false);
@@ -54,6 +56,20 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [running]);
 
+  const [runLevel, setRunLevel] = useState(false);
+  const [level, setLevel] = useState(1);
+  useEffect(() => {
+    let interval;
+    if (runLevel) {
+      interval = setInterval(() => {
+        setLevel((prevTime) => prevTime + 1);
+      }, 10000);
+    } else if (!running) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [runLevel]);
+
   const onUpdate = (value) => {
     // setScore(value);
   };
@@ -61,7 +77,7 @@ const Home = () => {
   return (
     <div>
       <div className="absolute p-10 top-0 left-0">
-        <LeftBar score={score} />
+        <LeftBar score={score} level={level} />
       </div>
       <div className="flex flex-col items-center justify-center w-full h-screen mb-12">
         <RivalVideo onStarted={onBlinkStarted} onEnded={onBlinkEnded} />
