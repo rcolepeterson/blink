@@ -30,10 +30,10 @@ const RivalVideo = ({ onStarted, onEnded }) => {
 
   const videoEnded = () => {
     console.log("videoEnded");
-    setVideoPlaying(PATH_TO_VIDEO + VIDEO_WINNING);
-    setTimeout(() => {
-      videoRef.current.play();
-    }, 500);
+    // setVideoPlaying(PATH_TO_VIDEO + VIDEO_WINNING);
+    // setTimeout(() => {
+    //   videoRef.current.play();
+    // }, 500);
   };
 
   const onUserLoses = () => {
