@@ -2,11 +2,14 @@ import React, { useRef, useState } from "react";
 import Blink from "../components/Blink";
 const PATH_TO_VIDEO = "/";
 const VIDEO_WINNING = "WinningMessaging_2.mp4";
-const VIDEO_LOSING = "LosingMessaging_2.mp4";
+const VIDEO_LOSING = "LoserMessaging_2.mp4";
 const VIDEO_PLAYING = "StaringContestants_v1d.mp4";
 // d00a2c
 const RivalVideo = ({ onStarted, onEnded }) => {
   const videoRef = useRef(null);
+  const ref = useRef(0); //
+  const onBlinkEndedRef = useRef(0); //
+  onBlinkEndedRef.current = onEnded;
   const [gameStarted, setGameStarted] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const [videoPlaying, setVideoPlaying] = useState(
@@ -15,6 +18,7 @@ const RivalVideo = ({ onStarted, onEnded }) => {
 
   const onBlinkStarted = () => {
     console.log("onBlinkStarted cole");
+    ref.current = 1;
     if (onStarted) {
       onStarted();
     }
@@ -33,6 +37,19 @@ const RivalVideo = ({ onStarted, onEnded }) => {
     if (onStarted) {
       onEnded();
     }
+  };
+
+  const onUserLoses = () => {
+    console.log("onUserLoses lets update", ref.current);
+    console.log("videoPlaying", videoPlaying);
+    if (ref.current === 1) {
+      setVideoPlaying(PATH_TO_VIDEO + VIDEO_LOSING);
+    }
+    setTimeout(() => {
+      videoRef.current.play();
+    }, 500);
+
+    onBlinkEndedRef.current();
   };
 
   return (
@@ -54,6 +71,7 @@ const RivalVideo = ({ onStarted, onEnded }) => {
               <Blink
                 startTrackingBlink={gameStarted}
                 onBlinkStarted={onBlinkStarted}
+                onUserLoses={onUserLoses}
               />
             </div>
 
