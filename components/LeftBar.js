@@ -13,7 +13,7 @@ const LeftBar = () => {
       </div>
 
       <div className="mt-6">
-        <h4 className="">Round</h4>
+        <h4 className="">Level</h4>
         <h2 className="">9</h2>
       </div>
       <div className="mt-6">

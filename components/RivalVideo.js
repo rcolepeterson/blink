@@ -1,31 +1,56 @@
 import React, { useRef, useState } from "react";
 import Blink from "../components/Blink";
 const PATH_TO_VIDEO = "/";
+const VIDEO_WINNING = "WinningMessaging_2.mp4";
+const VIDEO_LOSING = "LosingMessaging_2.mp4";
+const VIDEO_PLAYING = "StaringContestants_v1d.mp4";
 // d00a2c
 const RivalVideo = () => {
   const videoRef = useRef(null);
   const [gameStarted, setGameStarted] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const [videoPlaying, setVideoPlaying] = useState(
+    PATH_TO_VIDEO + VIDEO_PLAYING
+  );
 
   const onBlinkStarted = () => {
-    console.log("onBlinkStarted");
+    console.log("onBlinkStarted cole");
     setShowVideo(true);
     videoRef.current.play();
   };
+
+  const videoEnded = () => {
+    console.log("videoEnded lets update");
+    setVideoPlaying(PATH_TO_VIDEO + VIDEO_WINNING);
+
+    // var thePromise = videoRef.current.play();
+
+    // if (thePromise != undefined) {
+    //   thePromise.then(function (_) {
+    //     // item.pause();
+    //     // item.currentTime = 0;
+    //   });
+    // }
+
+    setTimeout(() => {
+      videoRef.current.play();
+    }, 500);
+  };
+
   return (
     <div className="relative rival">
       <div className="rc">
         <div id="blackcircle">
           <div id="whitecircle">
             <video
-              src={PATH_TO_VIDEO + "StaringContestants_v1d.mp4"}
+              src={videoPlaying}
               className="video-circle"
               width="500"
               ref={videoRef}
               height="500"
               style={{ visibility: !showVideo ? "hidden" : "visible" }}
               muted
-              loop
+              onEnded={() => videoEnded()}
             ></video>
             <div className="absolute top-0">
               <Blink
