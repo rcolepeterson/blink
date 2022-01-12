@@ -1,4 +1,4 @@
-const LeftBar = ({ score = "2,390,927", level = "1" }) => {
+const LeftBar = ({ score = "2,390,927", level = "1", ranking = "0" }) => {
   const logo = "/logo.png";
   return (
     <div className="left-bar">
@@ -18,7 +18,7 @@ const LeftBar = ({ score = "2,390,927", level = "1" }) => {
       </div>
       <div className="mt-6">
         <h4 className="">International Ranking:</h4>
-        <h2 className="">3,892</h2>
+        <h2 className="">{ranking}</h2>
       </div>
     </div>
   );

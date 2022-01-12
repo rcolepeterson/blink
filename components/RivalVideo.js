@@ -1,15 +1,17 @@
 import React, { useRef, useState } from "react";
+import { useEffect } from "react/cjs/react.development";
 import Blink from "../components/Blink";
 const PATH_TO_VIDEO = "/";
 const VIDEO_WINNING = "WinningMessaging_2.mp4";
 const VIDEO_LOSING = "LoserMessaging_2.mp4";
 const VIDEO_PLAYING = "StaringContestants_v1d.mp4";
-// d00a2c
 const RivalVideo = ({ onStarted, onEnded }) => {
   const videoRef = useRef(null);
   const ref = useRef(0); //
+
   const onBlinkEndedRef = useRef(0); //
   onBlinkEndedRef.current = onEnded;
+
   const [gameStarted, setGameStarted] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const [videoPlaying, setVideoPlaying] = useState(
@@ -17,7 +19,7 @@ const RivalVideo = ({ onStarted, onEnded }) => {
   );
 
   const onBlinkStarted = () => {
-    console.log("onBlinkStarted cole");
+    console.log("on Blink Started");
     ref.current = 1;
     if (onStarted) {
       onStarted();
@@ -27,30 +29,33 @@ const RivalVideo = ({ onStarted, onEnded }) => {
   };
 
   const videoEnded = () => {
-    console.log("videoEnded lets update");
+    console.log("videoEnded");
     setVideoPlaying(PATH_TO_VIDEO + VIDEO_WINNING);
-
     setTimeout(() => {
       videoRef.current.play();
     }, 500);
-
-    if (onStarted) {
-      onEnded();
-    }
   };
 
   const onUserLoses = () => {
-    console.log("onUserLoses lets update", ref.current);
-    console.log("videoPlaying", videoPlaying);
-    if (ref.current === 1) {
+    console.log("onUserLoses");
+    if (ref.current !== 0) {
       setVideoPlaying(PATH_TO_VIDEO + VIDEO_LOSING);
+      onBlinkEndedRef.current();
+      ref.current = 0;
+      setTimeout(() => {
+        videoRef.current.play();
+      }, 500);
     }
-    setTimeout(() => {
-      videoRef.current.play();
-    }, 500);
-
-    onBlinkEndedRef.current();
   };
+
+  // useEffect(() => {
+  //   videoRef.current.addEventListener("timeupdate", () => {
+  //     console.log("Event callback: " + videoRef.current.currentTime);
+  //     if (videoRef.current.currentTime > 10) {
+  //       videoEnded();
+  //     }
+  //   });
+  // });
 
   return (
     <div className="relative rival">
@@ -83,6 +88,21 @@ const RivalVideo = ({ onStarted, onEnded }) => {
               className="btn-lg bg-black no-animation text-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-40 "
             >
               Start Staring contest
+            </button>
+
+            <button
+              style={{
+                display:
+                  videoPlaying === PATH_TO_VIDEO + VIDEO_LOSING
+                    ? "block"
+                    : "none",
+              }}
+              onClick={() => {
+                window.location.reload();
+              }}
+              className="btn-lg bg-black no-animation text-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-40 "
+            >
+              Try Again
             </button>
           </div>
         </div>

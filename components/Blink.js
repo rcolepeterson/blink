@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { blinkDontInit } from "../components/blinkDont";
 
-const Blink = ({
-  startTrackingBlink,
-  onBlinkStarted,
-  showUser = true,
-  onUserLoses,
-}) => {
-  const requestRef = React.useRef();
+const Blink = ({ startTrackingBlink, onBlinkStarted, onUserLoses }) => {
   const videoRef = React.useRef();
   const running = React.useRef(0);
+  const initializedRef = React.useRef(false);
   const [showProfile, setShowProfile] = useState(true);
   const [initialized, setInitialized] = useState(false);
   const [userBlinked, setUserBlinked] = useState(false);
@@ -34,14 +29,15 @@ const Blink = ({
     onUserLoses();
   };
   const onLoaded = () => {
-    console.log("we have initialized");
-    setInitialized(true);
+    if (!initializedRef.current) {
+      console.log("we are initialized");
+      setInitialized(true);
+      initializedRef.current = true;
+    }
   };
 
   const init = async () => {
     blinkDontInit(onUserBlinks, onLoaded);
-    // await blinkdetection.loadModel();
-    // await blinkdetection.setUpCamera(videoRef.current);
   };
 
   const startPrediction = () => {
