@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Blink from "../components/Blink";
 import RivalVideo from "../components/RivalVideo";
-import MyTimer from "../components/MyTimer";
 import AnimatedNumber from "react-animated-number";
 import { useCountUp } from "react-countup";
 import Timer from "../components/Timer";
@@ -11,6 +10,12 @@ const getRandomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
 const Home = () => {
+  const [startBlink, setStartBlink] = useState(false);
+  const [startTimer, setStartTimer] = useState(false);
+  const [loader, setLoader] = useState(false);
+  const [score, setScore] = useState(getRandomInt(10, 1000));
+  const [gameStarted, setGameStarted] = useState(false);
+
   const time = new Date();
   time.setSeconds(time.getSeconds() + 4);
   const onExpire = () => {
@@ -22,15 +27,16 @@ const Home = () => {
     setScore(getRandomInt(10, 1000));
   };
 
-  const [startBlink, setStartBlink] = useState(false);
-  const [startTimer, setStartTimer] = useState(false);
-  const [loader, setLoader] = useState(false);
-  const [score, setScore] = useState(getRandomInt(10, 1000));
-  const [gameStarted, setGameStarted] = useState(false);
-
   const onBlinkStarted = () => {
-    setLoader(false);
+    // setLoader(false);
+    console.log("ok dude, lets start", startTimer);
     setStartTimer(true);
+  };
+
+  const onBlinkEnded = () => {
+    // setLoader(false);
+    console.log("ok dude, lets end", startTimer);
+    setStartTimer(false);
   };
 
   return (
@@ -39,12 +45,12 @@ const Home = () => {
         <LeftBar />
       </div>
       <div className="flex flex-col items-center justify-center w-full h-screen mb-12">
-        <RivalVideo />
+        <RivalVideo onStarted={onBlinkStarted} onEnded={onBlinkEnded} />
         {/* <div className="absolute top-0">
           <Blink showUser={!gameStarted} />
         </div> */}
         <div className="mt-8">
-          <Timer />
+          <Timer doRun={startTimer} />
         </div>
       </div>
     </div>

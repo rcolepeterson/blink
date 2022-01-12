@@ -69,9 +69,9 @@
 
 import React, { useState, useEffect } from "react";
 
-const Stopwatch = () => {
+const Stopwatch = ({ doRun = false, onUpdate }) => {
   const [time, setTime] = useState(0);
-  const [running, setRunning] = useState(false);
+  const [running, setRunning] = useState(doRun);
   useEffect(() => {
     let interval;
     if (running) {
@@ -83,6 +83,11 @@ const Stopwatch = () => {
     }
     return () => clearInterval(interval);
   }, [running]);
+
+  useEffect(() => {
+    setRunning(doRun);
+  }, [doRun]);
+
   return (
     <div className="stopwatch">
       <div className="numbers font-extrabold text-8xl mt-2">

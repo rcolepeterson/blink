@@ -5,7 +5,7 @@ const VIDEO_WINNING = "WinningMessaging_2.mp4";
 const VIDEO_LOSING = "LosingMessaging_2.mp4";
 const VIDEO_PLAYING = "StaringContestants_v1d.mp4";
 // d00a2c
-const RivalVideo = () => {
+const RivalVideo = ({ onStarted, onEnded }) => {
   const videoRef = useRef(null);
   const [gameStarted, setGameStarted] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
@@ -15,6 +15,9 @@ const RivalVideo = () => {
 
   const onBlinkStarted = () => {
     console.log("onBlinkStarted cole");
+    if (onStarted) {
+      onStarted();
+    }
     setShowVideo(true);
     videoRef.current.play();
   };
@@ -23,18 +26,13 @@ const RivalVideo = () => {
     console.log("videoEnded lets update");
     setVideoPlaying(PATH_TO_VIDEO + VIDEO_WINNING);
 
-    // var thePromise = videoRef.current.play();
-
-    // if (thePromise != undefined) {
-    //   thePromise.then(function (_) {
-    //     // item.pause();
-    //     // item.currentTime = 0;
-    //   });
-    // }
-
     setTimeout(() => {
       videoRef.current.play();
     }, 500);
+
+    if (onStarted) {
+      onEnded();
+    }
   };
 
   return (
