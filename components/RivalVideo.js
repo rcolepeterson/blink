@@ -39,7 +39,11 @@ const RivalVideo = ({ onStarted, onEnded }) => {
   const onUserLoses = () => {
     console.log("onUserLoses");
     if (ref.current !== 0) {
-      setVideoPlaying(PATH_TO_VIDEO + VIDEO_LOSING);
+      if (videoRef.current.currentTime > 10) {
+        setVideoPlaying(PATH_TO_VIDEO + VIDEO_WINNING);
+      } else {
+        setVideoPlaying(PATH_TO_VIDEO + VIDEO_LOSING);
+      }
       onBlinkEndedRef.current();
       ref.current = 0;
       setTimeout(() => {
