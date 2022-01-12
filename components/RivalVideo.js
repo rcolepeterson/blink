@@ -103,7 +103,8 @@ const RivalVideo = ({ onStarted, onEnded }) => {
             <button
               style={{
                 display:
-                  videoPlaying === PATH_TO_VIDEO + VIDEO_LOSING
+                  videoPlaying === PATH_TO_VIDEO + VIDEO_LOSING ||
+                  videoPlaying === PATH_TO_VIDEO + VIDEO_WINNING
                     ? "block"
                     : "none",
               }}
