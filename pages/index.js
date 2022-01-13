@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import RivalVideo from "../components/RivalVideo";
 import Timer from "../components/Timer";
 import LeftBar from "../components/LeftBar";
+import DaisyModal from "../components/DaisyModal";
 
 // this function returns a random number between 1000 and 10,000
 function getRandomNumber() {
@@ -55,6 +56,13 @@ const Home = () => {
 
   return (
     <div>
+      <DaisyModal>
+        <p className="text-black text-2xl py-6 ">
+          Just position your face in this circle, blink to test it out, then
+          click &apos;Start Staring Contest&apos; when you&apos;re ready to
+          rock.
+        </p>
+      </DaisyModal>
       <div className="absolute p-10 top-0 left-0">
         <LeftBar score={score} level={level} ranking={ranking} />
       </div>
