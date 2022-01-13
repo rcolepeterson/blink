@@ -10,13 +10,13 @@ const Modal = ({ children }) => {
       <div className="modal-box">
         <button
           onClick={() => setModalOpen(false)}
-          class="btn btn-circle btn-xl absolute -top-5 -right-4"
+          className="btn btn-circle btn-xl absolute -top-5 -right-4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            class="inline-block w-4 h-4 stroke-current"
+            className="inline-block w-4 h-4 stroke-current"
           >
             <path
               stroke-linecap="round"
