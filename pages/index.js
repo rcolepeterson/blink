@@ -58,7 +58,7 @@ const Home = () => {
     <div>
       <DaisyModal>
         <p className="text-black text-2xl py-6 ">
-          Just position your face in this circle, blink to test it out, then
+          Just position your face in the circle, blink to test it out, then
           click &apos;Start Staring Contest&apos; when you&apos;re ready to
           rock.
         </p>
