@@ -65,12 +65,12 @@ const Blink = ({ startTrackingBlink, onBlinkStarted, onUserLoses }) => {
   return (
     <div>
       {!initialized && (
-        <h2 className=" text-orange-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-8 ">
+        <h2 className=" text-orange-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           loading ...
         </h2>
       )}
       {userBlinked && !running.current && (
-        <h2 className=" text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-8 ">
+        <h2 className=" text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ml-2 ">
           You blinked!
         </h2>
       )}
