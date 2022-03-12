@@ -15,9 +15,11 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
             rel="stylesheet"
           ></link>
-          {/* 
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Raleway:wght@400;700&display=swap" rel="stylesheet"></link>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Raleway:wght@400;700&display=swap" rel="stylesheet"> */}
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Raleway:wght@400;700&display=swap"
+            rel="stylesheet"
+          ></link>
 
           <link
             rel="apple-touch-icon"
