@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import RivalVideo from "../components/RivalVideo";
 import Timer from "../components/Timer";
-import Logo from "../components/Logo";
-import Modal from "../components/modal";
+import LeftBar from "../components/LeftBar";
+import DaisyModal from "../components/DaisyModal";
 
 // this function returns a random number between 1000 and 10,000
 function getRandomNumber() {
@@ -56,23 +56,22 @@ const Home = () => {
 
   return (
     <div>
-      <Modal>
-        <h5 className="text-center mt-4">How to Play</h5>
-        <p className="text-lg py-6 text-center">
+      <DaisyModal>
+        <p className="text-black text-2xl py-6 ">
           Just position your face in the circle, blink to test it out, then
           click &apos;Start Staring Contest&apos; when you&apos;re ready to
           rock.
         </p>
-      </Modal>
-      <div className="p-6">
-        <Logo />
+      </DaisyModal>
+      <div className="absolute p-10 top-0 left-0">
+        <LeftBar score={score} level={level} ranking={ranking} />
       </div>
-      {/* <div className="flex flex-col items-center justify-center w-full h-screen mb-12">
+      <div className="flex flex-col items-center justify-center w-full h-screen mb-12">
         <RivalVideo onStarted={onBlinkStarted} onEnded={onBlinkEnded} />
         <div className="mt-8">
           <Timer doRun={startTimer} />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
