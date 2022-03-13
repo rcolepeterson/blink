@@ -52,6 +52,7 @@ const RivalVideo = ({ onStarted, onEnded }) => {
     <div className="relative rival">
       <video
         src={videoPlaying}
+        playsInline
         className="video-circle"
         ref={videoRef}
         style={{ visibility: !showVideo ? "hidden" : "visible" }}

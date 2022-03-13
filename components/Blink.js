@@ -80,6 +80,7 @@ const Blink = ({ startTrackingBlink, onBlinkStarted, onUserLoses }) => {
         id="blinkVideo"
         ref={videoRef}
         playsInline
+        muted
       ></video>
     </div>
   );

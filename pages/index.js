@@ -8,9 +8,9 @@ const Home = () => {
       <div className="p-6">
         <Logo />
       </div>
-      <div className="text-center w-full mx-auto max-w-sm">
-        <div className="w-full flex justify-center mb-6">
-          <div className="rounded-full w-10 h-10 p-16 bg-black bg-opacity-75"></div>
+      <div className="text-center w-full mx-auto max-w-sm bg-transparent">
+        <div className="w-full flex justify-center mb-0">
+          <div className="rounded-full w-10 h-10 p-6 bg-black bg-opacity-75"></div>
         </div>
         <div className="font-myfont shadRed">
           <h1 className="uppercase">The Don&apos;t</h1>
@@ -25,7 +25,7 @@ const Home = () => {
           wasters.
         </p>
         <Link href="/start">
-          <a className="btn rounded-full bg-opacity-80 bg-black mt-10">
+          <a className="btn rounded-full bg-opacity-80 bg-black">
             Get started
             <svg
               xmlns="http://www.w3.org/2000/svg"
