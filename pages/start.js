@@ -67,12 +67,12 @@ const Home = () => {
       <div className="p-6">
         <Logo />
       </div>
-      {/* <div className="flex flex-col items-center justify-center w-full h-screen mb-12">
+      <div className="flex flex-col items-center w-full">
         <RivalVideo onStarted={onBlinkStarted} onEnded={onBlinkEnded} />
-        <div className="mt-8">
+        {/* <div className="mt-8">
           <Timer doRun={startTimer} />
-        </div>
-      </div> */}
+        </div> */}
+      </div>
     </div>
   );
 };

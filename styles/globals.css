@@ -56,12 +56,14 @@ a {
 .video-circle {
   border-radius: 50%;
   object-fit: cover;
-  height: 500px;
+  height: 100%;
   border: 5px solid #d00a2c;
-  margin: 5px;
+  height: 374px;
+  width: 374px;
+  background-color: #64090a;
 }
 
-#blackcircle {
+/* #blackcircle {
   background-color: #d00a2c;
   width: 540px;
   height: 540px;
@@ -80,7 +82,7 @@ a {
   top: calc(50% - (510px / 2));
   left: calc(50% - (510px / 2));
   margin: 0 auto;
-}
+} */
 
 .numbers {
   text-shadow: 4px 4px #64090a;

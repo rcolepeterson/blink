@@ -30,10 +30,6 @@ const RivalVideo = ({ onStarted, onEnded }) => {
 
   const videoEnded = () => {
     console.log("videoEnded");
-    // setVideoPlaying(PATH_TO_VIDEO + VIDEO_WINNING);
-    // setTimeout(() => {
-    //   videoRef.current.play();
-    // }, 500);
   };
 
   const onUserLoses = () => {
@@ -52,77 +48,49 @@ const RivalVideo = ({ onStarted, onEnded }) => {
     }
   };
 
-  // useEffect(() => {
-  //   videoRef.current.addEventListener("timeupdate", () => {
-  //     console.log("Event callback: " + videoRef.current.currentTime);
-  //     if (videoRef.current.currentTime > 10) {
-  //       videoEnded();
-  //     }
-  //   });
-  // });
-
   return (
     <div className="relative rival">
-      <div className="rc">
-        <div id="blackcircle">
-          <div id="whitecircle">
-            <video
-              src={videoPlaying}
-              className="video-circle"
-              width="500"
-              ref={videoRef}
-              height="500"
-              style={{ visibility: !showVideo ? "hidden" : "visible" }}
-              muted
-              onEnded={() => videoEnded()}
-            ></video>
-            <div className="absolute top-0">
-              <Blink
-                startTrackingBlink={gameStarted}
-                onBlinkStarted={onBlinkStarted}
-                onUserLoses={onUserLoses}
-              />
-            </div>
-            {/* {!gameStarted && (
-              // <img
-              //   src="./internationalStaring.png"
-              //   className="absolute top-[90px] w-[425px] left-1/2 transform -translate-x-1/2"
-              // />
-              <h4 className="absolute top-[90px] w-[425px] left-1/2 transform -translate-x-1/2 mt-6 ml-2">
-                Position your face in this circle. Blink to test it out. Click
-                &apos;Start Staring Contest&apos; when you&apos;re ready to
-                rock.
-              </h4>
-            )} */}
-
-            <button
-              style={{ display: gameStarted ? "none" : "block" }}
-              onClick={() => {
-                setGameStarted(true);
-              }}
-              className="btn-lg bg-black no-animation text-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-40 "
-            >
-              Start Staring contest
-            </button>
-
-            <button
-              style={{
-                display:
-                  videoPlaying === PATH_TO_VIDEO + VIDEO_LOSING ||
-                  videoPlaying === PATH_TO_VIDEO + VIDEO_WINNING
-                    ? "block"
-                    : "none",
-              }}
-              onClick={() => {
-                window.location.reload();
-              }}
-              className="btn-lg bg-black no-animation text-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-40 "
-            >
-              Try Again
-            </button>
-          </div>
-        </div>
+      <video
+        src={videoPlaying}
+        className="video-circle"
+        ref={videoRef}
+        style={{ visibility: !showVideo ? "hidden" : "visible" }}
+        muted
+        onEnded={() => videoEnded()}
+      ></video>
+      <div className="absolute top-0 flex justify-center w-full">
+        <Blink
+          startTrackingBlink={gameStarted}
+          onBlinkStarted={onBlinkStarted}
+          onUserLoses={onUserLoses}
+        />
       </div>
+
+      <button
+        style={{ display: gameStarted ? "none" : "block" }}
+        onClick={() => {
+          setGameStarted(true);
+        }}
+        className="btn-lg bg-black rounded-full whitespace-nowrap font-bold no-animation text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-24 uppercase"
+      >
+        Start Staring contest
+      </button>
+
+      <button
+        style={{
+          display:
+            videoPlaying === PATH_TO_VIDEO + VIDEO_LOSING ||
+            videoPlaying === PATH_TO_VIDEO + VIDEO_WINNING
+              ? "block"
+              : "none",
+        }}
+        onClick={() => {
+          window.location.reload();
+        }}
+        className="btn-lg bg-black rounded-full  font-bold no-animation text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-24 uppercase "
+      >
+        Try Again
+      </button>
     </div>
   );
 };
