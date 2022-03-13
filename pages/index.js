@@ -19,7 +19,7 @@ const Home = () => {
         <p className="text-xl pt-6 shadRed">
           Introducing the World’s first International Staring Contest.
         </p>
-        <p className="pt-4">
+        <p className="pt-4 mb-6">
           Take a break in your day to test your will. See how long you can last
           without blinking and how you stack up against your fellow time
           wasters.

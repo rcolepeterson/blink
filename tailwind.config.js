@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         myfont: ['"VT323"', "monospace"],
-        nrmlfont: ['"Raleway"', "sans-serif"],
+        nrmlfont: ['"Oswald"', "sans-serif"],
       },
     },
   },

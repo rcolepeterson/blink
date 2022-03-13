@@ -21,10 +21,10 @@ const Stopwatch = ({ doRun = false }) => {
 
   return (
     <div className="stopwatch">
-      <div className="numbers font-extrabold text-8xl mt-2">
+      <div className="numbers font-extrabold text-7xl w-[250px] mr-3">
         <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
         <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
-        <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
+        <span className="">{("0" + ((time / 10) % 100)).slice(-2)}</span>
       </div>
     </div>
   );

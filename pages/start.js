@@ -69,9 +69,9 @@ const Home = () => {
       </div>
       <div className="flex flex-col items-center w-full">
         <RivalVideo onStarted={onBlinkStarted} onEnded={onBlinkEnded} />
-        {/* <div className="mt-8">
+        <div className="mt-8 w-full flex justify-center">
           <Timer doRun={startTimer} />
-        </div> */}
+        </div>
       </div>
     </div>
   );
