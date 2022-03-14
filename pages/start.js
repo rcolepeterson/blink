@@ -3,6 +3,7 @@ import RivalVideo from "../components/RivalVideo";
 import Timer from "../components/Timer";
 import Logo from "../components/Logo";
 import Modal from "../components/modal";
+import LeftBar from "../components/LeftBar";
 
 // this function returns a random number between 1000 and 10,000
 function getRandomNumber() {
@@ -72,6 +73,7 @@ const Home = () => {
         <div className="mt-8 w-full flex justify-center">
           <Timer doRun={startTimer} />
         </div>
+        <LeftBar score={score} />
       </div>
     </div>
   );
