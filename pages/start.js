@@ -73,7 +73,7 @@ const Home = () => {
         <div className="mt-8 w-full flex justify-center">
           <Timer doRun={startTimer} />
         </div>
-        <LeftBar score={score} />
+        <LeftBar score={score} level={level} />
       </div>
     </div>
   );
