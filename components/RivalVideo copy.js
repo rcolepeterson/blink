@@ -4,7 +4,7 @@ import Blink from "../components/Blink";
 const PATH_TO_VIDEO = "/";
 const VIDEO_WINNING = "WinningMessaging3.mp4";
 const VIDEO_LOSING = "LoserMessaging_2.mp4";
-const VIDEO_PLAYING = "StaringContestants_v1d.mp4";
+const VIDEO_PLAYING = "Square4.mp4";
 const RivalVideo = ({ onStarted, onEnded }) => {
   const videoRef = useRef(null);
   const ref = useRef(0); //
