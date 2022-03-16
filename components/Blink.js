@@ -74,7 +74,7 @@ const Blink = ({
   }, []);
 
   return (
-    <div className="flex mx-auto p-2 md:p-0 overflow-hidden relative">
+    <div className="flex mx-auto  md:p-0 overflow-hidden relative">
       {!initialized && (
         <h3 className=" text-orange-400 w-full text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           loading ...

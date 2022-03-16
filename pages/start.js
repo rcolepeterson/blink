@@ -16,11 +16,13 @@ const Home = () => {
   const [score, setScore] = useState(0);
   const [ranking, setRanking] = useState(0);
   const [blinkloaded, setBlinkLoaded] = useState(false);
+  const [ended, setEnded] = useState(false);
 
   const onBlinkStarted = () => {
     setStartTimer(true);
     setRunning(true);
     setRunLevel(true);
+    setEnded(false);
   };
 
   const onBlinkEnded = () => {
@@ -28,6 +30,7 @@ const Home = () => {
     setRunning(false);
     setRunLevel(false);
     setRanking(getRandomNumber());
+    setEnded(true);
   };
 
   const [running, setRunning] = useState(false);
@@ -64,9 +67,9 @@ const Home = () => {
 
   return (
     <div>
-      <div className="absolute top-0 left-0 w-full z-0">
+      {/* <div className="absolute top-0 left-0 w-full z-0">
         <FireWorks />
-      </div>
+      </div> */}
       <Modal isLoaded={blinkloaded}>
         <h5 className="text-center mt-4 font-Raleway">How to Play</h5>
         <p className="text-lg py-6 text-center font-Raleway">
@@ -75,7 +78,7 @@ const Home = () => {
           rock.
         </p>
       </Modal>
-      <div className="p-6">
+      <div className="p-6 pb-0">
         <Logo />
       </div>
       <div className="flex flex-col items-center w-full">
@@ -84,11 +87,21 @@ const Home = () => {
           onEnded={onBlinkEnded}
           onLoadedHandler={onLoadedHandler}
         />
-        <div className="mt-8 w-full flex justify-center">
-          <Timer doRun={startTimer} />
-        </div>
-        <LeftBar score={score} level={level} />
+        {!ended && (
+          <div className="mt-6 md:mt-8 w-full flex justify-center">
+            <Timer doRun={startTimer} />
+          </div>
+        )}
+        {!ended && <LeftBar score={score} level={level} />}
       </div>
+      {ended && (
+        <div className="mt-6">
+          <p className="text-center w-full"> Your Global Ranking:</p>
+          <h5 className="text-center w-full">{ranking}</h5>
+          <p className="text-center w-full uppercase"> Out of</p>
+          <h3 className="text-center w-full">{ranking}</h3>
+        </div>
+      )}
     </div>
   );
 };

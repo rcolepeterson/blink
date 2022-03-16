@@ -58,9 +58,16 @@ a {
   object-fit: cover;
   height: 100%;
   border: 5px solid #d00a2c;
-  height: 374px;
-  width: 374px;
+  height: 320px;
+  width: 320px;
   background-color: #64090a;
+}
+
+@media screen and (min-width: 768px) {
+  .video-circle {
+    height: 374px;
+    width: 374px;
+  }
 }
 
 /* #blackcircle {

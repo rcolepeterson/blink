@@ -72,7 +72,7 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler }) => {
         onClick={() => {
           setGameStarted(true);
         }}
-        className="btn-lg bg-black rounded-full whitespace-nowrap font-bold no-animation text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-24 uppercase"
+        className="btn-md bg-black rounded-full whitespace-nowrap font-bold no-animation text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-24 uppercase"
       >
         Start Staring contest
       </button>
@@ -88,7 +88,7 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler }) => {
         onClick={() => {
           window.location.reload();
         }}
-        className="btn-lg bg-black rounded-full  font-bold no-animation text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-24 uppercase "
+        className="btn-md bg-black rounded-full  font-bold no-animation text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-24 uppercase "
       >
         Try Again
       </button>

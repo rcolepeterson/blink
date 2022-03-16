@@ -20,8 +20,8 @@ const Stopwatch = ({ doRun = false }) => {
   }, [doRun]);
 
   return (
-    <div className="stopwatch">
-      <div className="numbers font-extrabold text-7xl w-[250px]">
+    <div className="stopwatch w-full flex justify-center">
+      <div className="numbers font-extrabold text-5xl md:text-7xl w-[250px] flex justify-center">
         <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
         <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
         <span className="">{("0" + ((time / 10) % 100)).slice(-2)}</span>
