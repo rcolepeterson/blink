@@ -15,6 +15,7 @@ const Home = () => {
   const [startTimer, setStartTimer] = useState(false);
   const [score, setScore] = useState(0);
   const [ranking, setRanking] = useState(0);
+  const [blinkloaded, setBlinkLoaded] = useState(false);
 
   const onBlinkStarted = () => {
     setStartTimer(true);
@@ -56,14 +57,19 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [runLevel]);
 
+  const onLoadedHandler = () => {
+    console.log("OMG we have loasded", blinkloaded);
+    setBlinkLoaded(true);
+  };
+
   return (
     <div>
       <div className="absolute top-0 left-0 w-full z-0">
         <FireWorks />
       </div>
-      <Modal>
-        <h5 className="text-center mt-4">How to Play</h5>
-        <p className="text-lg py-6 text-center">
+      <Modal isLoaded={blinkloaded}>
+        <h5 className="text-center mt-4 font-Raleway">How to Play</h5>
+        <p className="text-lg py-6 text-center font-Raleway">
           Just position your face in the circle, blink to test it out, then
           click &apos;Start Staring Contest&apos; when you&apos;re ready to
           rock.
@@ -73,7 +79,11 @@ const Home = () => {
         <Logo />
       </div>
       <div className="flex flex-col items-center w-full">
-        <RivalVideo onStarted={onBlinkStarted} onEnded={onBlinkEnded} />
+        <RivalVideo
+          onStarted={onBlinkStarted}
+          onEnded={onBlinkEnded}
+          onLoadedHandler={onLoadedHandler}
+        />
         <div className="mt-8 w-full flex justify-center">
           <Timer doRun={startTimer} />
         </div>

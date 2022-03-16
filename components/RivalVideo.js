@@ -1,11 +1,10 @@
 import React, { useRef, useState } from "react";
-import { useEffect } from "react/cjs/react.development";
 import Blink from "../components/Blink";
 const PATH_TO_VIDEO = "/";
 const VIDEO_WINNING = "WinningMessaging3.mp4";
 const VIDEO_LOSING = "LoserMessaging_2.mp4";
 const VIDEO_PLAYING = "Square4.mp4";
-const RivalVideo = ({ onStarted, onEnded }) => {
+const RivalVideo = ({ onStarted, onEnded, onLoadedHandler }) => {
   const videoRef = useRef(null);
   const ref = useRef(0); //
 
@@ -64,6 +63,7 @@ const RivalVideo = ({ onStarted, onEnded }) => {
           startTrackingBlink={gameStarted}
           onBlinkStarted={onBlinkStarted}
           onUserLoses={onUserLoses}
+          onLoadedHandler={onLoadedHandler}
         />
       </div>
 

@@ -41,7 +41,7 @@ const SignInFormBase = ({ handler }) => {
 
   return (
     <>
-      <div className="h-screen flex flex-col justify-center items-center">
+      <div className="h-screen flex flex-col justify-center items-center font-Raleway">
         <div className="w-2/3">
           <label
             htmlFor="full-name"

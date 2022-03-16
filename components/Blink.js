@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { blinkDontInit } from "../components/blinkDont";
 
-const Blink = ({ startTrackingBlink, onBlinkStarted, onUserLoses }) => {
+const Blink = ({
+  startTrackingBlink,
+  onBlinkStarted,
+  onUserLoses,
+  onLoadedHandler,
+}) => {
   const videoRef = React.useRef();
   const running = React.useRef(0);
   const initializedRef = React.useRef(false);
@@ -28,9 +33,15 @@ const Blink = ({ startTrackingBlink, onBlinkStarted, onUserLoses }) => {
     }, 500);
     onUserLoses();
   };
+
+  const dispatchLoaded = () => {
+    onLoadedHandler();
+  };
+
   const onLoaded = () => {
     if (!initializedRef.current) {
       console.log("we are initialized");
+      dispatchLoaded(true);
       setInitialized(true);
       initializedRef.current = true;
     }
