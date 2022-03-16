@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         myfont: ['"VT323"', "monospace"],
         nrmlfont: ['"Oswald"', "sans-serif"],
+        Raleway: ["Raleway", "sans-serif"],
       },
     },
   },

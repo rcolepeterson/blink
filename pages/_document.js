@@ -11,16 +11,20 @@ class MyDocument extends Document {
             href="https://fonts.gstatic.com"
             crossOrigin="true"
           />
+
           <link
             href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
             rel="stylesheet"
           ></link>
-
-          {/* <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Raleway:wght@400;700&display=swap" rel="stylesheet"></link> */}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Raleway:wght@400;700&display=swap"
+            rel="stylesheet"
+          ></link>
           <link
             href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap"
             rel="stylesheet"
           ></link>
+
           <link
             rel="apple-touch-icon"
             sizes="180x180"

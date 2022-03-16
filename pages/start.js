@@ -4,6 +4,7 @@ import Timer from "../components/Timer";
 import Logo from "../components/Logo";
 import Modal from "../components/modal";
 import LeftBar from "../components/LeftBar";
+import FireWorks from "../components/Fireworks";
 
 // this function returns a random number between 1000 and 10,000
 function getRandomNumber() {
@@ -57,6 +58,9 @@ const Home = () => {
 
   return (
     <div>
+      <div className="absolute top-0 left-0 w-full z-0">
+        <FireWorks />
+      </div>
       <Modal>
         <h5 className="text-center mt-4">How to Play</h5>
         <p className="text-lg py-6 text-center">
