@@ -8,9 +8,9 @@ const LeftBar = ({ score = "2,390,927", level = "1", ranking = "0" }) => {
       <div id="burst-target-level" className="burst-target-level">
         <h5 className="text-2xl">Level:</h5>
         <h2 className="text-center text-2xl">{level}</h2>
-        {/* <div className="">
+        <div className="">
           <FireWorks level={level} />
-        </div> */}
+        </div>
       </div>
 
       <div>

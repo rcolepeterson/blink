@@ -8,7 +8,6 @@ const burstObj = {
   count: 10,
   top: 0,
   left: 0,
-  scale: 2,
   duration: 2000,
   children: {
     shape: ["circle", "polygon"],
