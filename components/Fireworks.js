@@ -4,8 +4,8 @@ const BurstComponent = dynamic(() => import("./BurstButton"), {
   ssr: false,
 });
 
-const FireWorks = () => {
-  return <BurstComponent />;
+const FireWorks = ({ level }) => {
+  return <BurstComponent level={level} />;
 };
 
 export default FireWorks;

@@ -4,10 +4,11 @@ import mojs from "@mojs/core"; // Currently there is a bug importing from npm, u
 // Declaration of the burst object
 const burstObj = {
   className: "BurstExample",
-  radius: { 25: 75 },
+  radius: { 0: 300 },
   count: 10,
   top: 0,
   left: 0,
+  scale: 2,
   duration: 2000,
   children: {
     shape: ["circle", "polygon"],
@@ -50,22 +51,42 @@ const buttonBurstsPool = [
 
 let burstIndex = 0;
 
-const Button = ({ onClick, ...props }) => {
+const Button = ({ level = 0, ...props }) => {
+  React.useEffect(() => {
+    console.log("we should burst");
+    doBurst();
+  }, [level]);
+
+  // this function returns the position x and y of a html element
+  const getPositionXY = (el) => {
+    return {
+      cx: el.getBoundingClientRect().left,
+      cy: el.getBoundingClientRect().top,
+    };
+  };
+
+  const doBurst = () => {
+    let { cx, cy } = getPositionXY(
+      document.querySelector("#burst-target-level")
+    );
+    buttonBurstsPool[burstIndex]
+      .tune({ x: cx + 40, y: cy })
+      .generate()
+      .replay();
+    burstIndex = burstIndex >= buttonBurstsPool.length - 1 ? 0 : burstIndex + 1;
+  };
+
   return (
-    <button
-      {...props}
-      className="button"
-      onClick={(e) => {
-        buttonBurstsPool[burstIndex]
-          .tune({ x: e.pageX, y: e.pageY })
-          .generate()
-          .replay();
-        burstIndex =
-          burstIndex >= buttonBurstsPool.length - 1 ? 0 : burstIndex + 1;
-      }}
-    >
-      Hi Shawn
-    </button>
+    <div>
+      {/* <button
+          className="button"
+          onClick={(e) => {
+            doBurst(e);
+          }}
+        >
+          Hi Shawn
+        </button> */}
+    </div>
   );
 };
 
