@@ -132,3 +132,20 @@ button:hover {
   background: #ff009a;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
+
+.desktop-only,
+.desktop-only-block {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+  .desktop-only {
+    display: flex;
+  }
+  .desktop-only-block {
+    display: block;
+  }
+}

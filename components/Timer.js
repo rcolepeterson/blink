@@ -7,7 +7,7 @@ const Stopwatch = ({ doRun = false }) => {
     let interval;
     if (running) {
       interval = setInterval(() => {
-        setTime((prevTime) => prevTime + 10);
+        setTime((prevTime) => prevTime + 20);
       }, 10);
     } else if (!running) {
       clearInterval(interval);

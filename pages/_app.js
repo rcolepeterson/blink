@@ -44,12 +44,23 @@ function MyApp({ Component, pageProps }) {
         <title>Dont Blink</title>
       </Head>
       <AppWrapper>
-        <Image
-          alt="background"
-          src="/bg-image.png"
-          layout="fill"
-          objectFit="cover"
-        ></Image>
+        <div className="desktop-only">
+          <Image
+            alt="background"
+            src="/bg-image.png"
+            layout="fill"
+            objectFit="cover"
+          ></Image>
+        </div>
+        <div className="mobile-only">
+          <Image
+            alt="background"
+            src="/bg-image-mobile.png"
+            layout="fill"
+            objectFit="cover"
+            className="object-fit-cover object-bottom "
+          ></Image>
+        </div>
         <Layout>
           {state.loggedIn ? (
             <Component {...pageProps} />
