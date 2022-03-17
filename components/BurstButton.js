@@ -3,12 +3,13 @@ import mojs from "@mojs/core"; // Currently there is a bug importing from npm, u
 
 // Declaration of the burst object
 const burstObj = {
-  className: "BurstExample",
+  className: "BurstExample fixed",
   radius: { 0: 300 },
   count: 10,
   top: 0,
   left: 0,
   duration: 2000,
+  parent: "#burst-target-level-holder",
   children: {
     shape: ["circle", "polygon"],
     fill: ["#fff", "#eee", "#ddd", "#FC46AD", "#F64040"],

@@ -77,6 +77,7 @@ const Home = () => {
       <div className="p-6 pb-0">
         <Logo />
       </div>
+      <div id="burst-target-level-holder"></div>
       <div className="flex flex-col items-center w-full">
         <RivalVideo
           onStarted={onBlinkStarted}
