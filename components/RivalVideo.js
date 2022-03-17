@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useRef, useState } from "react";
 import Blink from "../components/Blink";
 const PATH_TO_VIDEO = "/";
@@ -16,6 +17,8 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler }) => {
   const [videoPlaying, setVideoPlaying] = useState(
     PATH_TO_VIDEO + VIDEO_PLAYING
   );
+
+  const router = useRouter();
 
   const onBlinkStarted = () => {
     console.log("on Blink Started");
@@ -86,7 +89,7 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler }) => {
                 : "none",
           }}
           onClick={() => {
-            window.location.reload();
+            router.push("/");
           }}
           className="btn-md bg-black rounded-full  font-bold no-animation text-sm uppercase flex gap-4 justify-center items-center "
         >
@@ -115,7 +118,7 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler }) => {
                 : "none",
           }}
           onClick={() => {
-            window.location.reload();
+            router.push("/levelone");
           }}
           className="btn-md bg-black rounded-full  font-bold no-animation text-sm uppercase flex gap-4 justify-center items-center"
         >

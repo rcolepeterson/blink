@@ -105,7 +105,7 @@ function isVoluntaryBlink(blinkDetected) {
 
 async function renderPrediction() {
   if (rendering) {
-    const predictions = await model.estimateFaces({
+    const predictions = await model?.estimateFaces({
       input: video,
       returnTensors: false,
       flipHorizontal: false,

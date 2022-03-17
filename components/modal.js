@@ -20,7 +20,7 @@ export default function Modal({ isLoaded, children }) {
                   {!isLoaded && (
                     <button
                       type="button"
-                      className="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
+                      className="inline-flex items-center px-6 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
                     >
                       <svg
                         className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
