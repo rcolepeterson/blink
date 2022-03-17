@@ -1,15 +1,11 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import dynamic from "next/dynamic";
-const BurstComponent = dynamic(() => import("./Burst"), {
+const BurstComponent = dynamic(() => import("./BurstButton"), {
   ssr: false,
 });
 
 const FireWorks = () => {
-  return (
-    <div className="">
-      <BurstComponent />
-    </div>
-  );
+  return <BurstComponent />;
 };
 
 export default FireWorks;
