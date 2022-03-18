@@ -54,10 +54,7 @@ const Ranking = ({ score }) => {
       <p className="text-center w-full text-lg mb-2"> Your Global Ranking:</p>
       <div className="flex w-full justify-center items-center gap-4">
         <h2 className="text-center numbers">{ranking}</h2>
-        <p className="text-center uppercase text-xl text-[#681212] font-bold">
-          {" "}
-          of
-        </p>
+        <p className="text-center uppercase text-xl font-bold"> of</p>
         <h2 className="text-center numbers">{numUsers}</h2>
       </div>
       <p className="text-center w-full text-lg my-2"> Your Score:</p>

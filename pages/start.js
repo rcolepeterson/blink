@@ -81,11 +81,16 @@ const Home = () => {
     <div>
       <Modal isLoaded={blinkloaded}>
         <h5 className="text-center mt-4 font-Raleway">How to Play</h5>
-        <p className="text-lg py-6 text-center font-Raleway">
+        <ul class="list-decimal px-8 pt-6">
+          <li>Wearing glasses? Remove them.</li>
+          <li>Position your face in the circle</li>
+          <li>Blink to test it out then hit start!</li>
+        </ul>
+        {/* <p className="text-lg py-6 text-center font-Raleway">
           Just position your face in the circle, blink to test it out, then
           click &apos;Start Staring Contest&apos; when you&apos;re ready to
           rock.
-        </p>
+        </p> */}
       </Modal>
       <div className="p-6 pb-0">
         <Logo />

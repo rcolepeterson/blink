@@ -124,7 +124,7 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler, retry }) => {
                 : "none",
           }}
           onClick={() => {
-            router.push("/levelone");
+            router.push("/level-one");
           }}
           className="btn-md bg-black rounded-full  font-bold no-animation text-sm uppercase flex gap-4 justify-center items-center"
         >
