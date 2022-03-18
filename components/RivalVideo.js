@@ -130,10 +130,7 @@ const RivalVideo = ({
         <button
           style={{
             display:
-              videoPlaying === PATH_TO_VIDEO + VIDEO_LOSING ||
-              videoPlaying === PATH_TO_VIDEO + VIDEO_WINNING
-                ? "flex"
-                : "none",
+              videoPlaying !== PATH_TO_VIDEO + VIDEO_PLAYING ? "flex" : "none",
           }}
           onClick={() => {
             setShowVideo(false);
@@ -163,10 +160,7 @@ const RivalVideo = ({
         <button
           style={{
             display:
-              videoPlaying === PATH_TO_VIDEO + VIDEO_LOSING ||
-              videoPlaying === PATH_TO_VIDEO + VIDEO_WINNING
-                ? "flex"
-                : "none",
+              videoPlaying !== PATH_TO_VIDEO + VIDEO_LOSING ? "flex" : "none",
           }}
           onClick={onShareHandler}
           className="btn-md bg-black rounded-full  font-bold no-animation text-sm uppercase flex gap-4 justify-center items-center"
