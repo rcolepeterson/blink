@@ -94,14 +94,16 @@ const Blink = ({
           You blinked!
         </h3>
       )}
-      <video
-        style={{ opacity: showProfile ? "1" : "0" }}
-        className="video-circle"
-        id="blinkVideo"
-        ref={videoRef}
-        playsInline
-        muted
-      ></video>
+      <div className="rc">
+        <video
+          style={{ opacity: showProfile ? "1" : "0" }}
+          className="video-circle"
+          id="blinkVideo"
+          ref={videoRef}
+          playsInline
+          muted
+        ></video>
+      </div>
     </div>
   );
 };

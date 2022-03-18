@@ -52,16 +52,18 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler, retry }) => {
   };
 
   return (
-    <div className="relative rival">
-      <video
-        src={videoPlaying}
-        playsInline
-        className="video-circle"
-        ref={videoRef}
-        style={{ visibility: !showVideo ? "hidden" : "visible" }}
-        muted
-        onEnded={() => videoEnded()}
-      ></video>
+    <div className="relative">
+      <div className="rc">
+        <video
+          src={videoPlaying}
+          playsInline
+          className="video-circle"
+          ref={videoRef}
+          style={{ visibility: !showVideo ? "hidden" : "visible", height: 500 }}
+          muted
+          onEnded={() => videoEnded()}
+        ></video>
+      </div>
       <div className="absolute top-0 flex justify-center w-full">
         <Blink
           startTrackingBlink={gameStarted}
