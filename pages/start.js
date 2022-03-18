@@ -119,6 +119,12 @@ const Home = () => {
     }
   };
 
+  const getlevel = () => {
+    console.log("Hey colr Get the Level", level);
+
+    return level;
+  };
+
   const goToSharePage = () => {
     let pageName = getLevel(level);
     console.log();
@@ -146,6 +152,7 @@ const Home = () => {
           onLoadedHandler={onLoadedHandler}
           retry={resetEverything}
           onShareHandler={goToSharePage}
+          getlevel={getlevel}
         />
         {!ended && (
           <div className="mt-6 md:mt-8 w-full flex justify-center">
