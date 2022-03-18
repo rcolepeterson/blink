@@ -40,7 +40,7 @@ const Social = ({
         </Link>
         <Link href={"/"}>
           <Image
-            src="/dont-blink-kit-kat-level-eleven.png"
+            src={headerImageDesktop}
             layout="responsive"
             objectFit="contain"
             alt="dont blink kit kat level eleven"

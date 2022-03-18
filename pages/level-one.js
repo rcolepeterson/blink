@@ -6,8 +6,10 @@ const Element = () => {
   return (
     <>
       <NextSeo
+        title="BLINK"
+        canonical="https://blink-git-blink-dev-rcolepeterson.vercel.app/level-one/"
         openGraph={{
-          url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/level-one",
+          url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/level-one/",
           images: [
             {
               url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/SocialImage_1.png",
