@@ -5,8 +5,17 @@ export default {
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "https://www.url.ie/",
+    url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/",
     site_name: "The Don't Blink Break",
+    images: [
+      {
+        url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/dont-blink-kit-kat-level-eleven.png",
+        width: 748,
+        height: 392,
+        alt: "Og Image Alt",
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
     handle: "@handle",

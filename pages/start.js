@@ -81,7 +81,7 @@ const Home = () => {
     <div>
       <Modal isLoaded={blinkloaded}>
         <h5 className="text-center mt-4 font-Raleway">How to Play</h5>
-        <ul class="list-decimal px-8 pt-6">
+        <ul className="list-decimal px-8 pt-6">
           <li>Wearing glasses? Remove them.</li>
           <li>Position your face in the circle</li>
           <li>Blink to test it out then hit start!</li>
