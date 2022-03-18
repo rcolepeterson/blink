@@ -63,11 +63,7 @@ function MyApp({ Component, pageProps }) {
           ></Image>
         </div>
         <div className="container relative font-nrmlfont mx-auto min-w-full text-white h-screen overflow-hidden">
-          {state.loggedIn ? (
-            <Component {...pageProps} />
-          ) : (
-            <SignIn handler={handler} />
-          )}
+          <Component {...pageProps} />
         </div>
       </AppWrapper>
     </>
