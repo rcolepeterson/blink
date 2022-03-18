@@ -8,11 +8,12 @@ import SEO from "../next-seo.config";
 
 const Social = ({
   level = "Level #1",
+  pagename = "level-one",
   animalname = "cat",
   headerImage = "/dont-blink-kit-kat-level-eleven.png",
   headerImageDesktop = "/dont-blink-kit-kat-level-eleven.png",
 }) => {
-  const URL = SEO.openGraph.url;
+  const URL = SEO.openGraph.url + "/" + pagename;
   const title = `Well, that was a successful waste of time. @kitkat just helped me take a break for a staring contest. I was eventually defeated by this ${animalname}! 👁 👁 😵‍💫 `;
   const hashtags = "blinkbreak,kitkat,staringcontest";
   const shareOnTwitter = () => {

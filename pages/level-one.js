@@ -4,10 +4,7 @@ import { NextSeo } from "next-seo";
 import Logo from "../components/Logo";
 const Element = () => {
   return (
-    <div>
-      <div className="p-6 pb-0 desktop-only">
-        <Logo />
-      </div>
+    <>
       <NextSeo
         openGraph={{
           images: [
@@ -21,13 +18,16 @@ const Element = () => {
           ],
         }}
       />
+      <div className="p-6 pb-0 desktop-only">
+        <Logo />
+      </div>
       <Social
         level={"Level #1"}
         animalname={"cat"}
         headerImage={"/SocialImage_1.png"}
         headerImageDesktop={"/SocialImage_1.png"}
       />
-    </div>
+    </>
   );
 };
 export default Element;

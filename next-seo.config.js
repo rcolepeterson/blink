@@ -5,7 +5,7 @@ export default {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/",
+    url: "https://blink-git-blink-dev-rcolepeterson.vercel.app",
     site_name: "The Don't Blink Break",
     images: [
       {
