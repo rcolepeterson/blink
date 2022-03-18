@@ -5,7 +5,13 @@ const PATH_TO_VIDEO = "/";
 const VIDEO_WINNING = "WinningMessaging3.mp4";
 const VIDEO_LOSING = "LoserMessaging_2.mp4";
 const VIDEO_PLAYING = "Square4.mp4";
-const RivalVideo = ({ onStarted, onEnded, onLoadedHandler, retry }) => {
+const RivalVideo = ({
+  onStarted,
+  onEnded,
+  onLoadedHandler,
+  retry,
+  onShareHandler,
+}) => {
   const videoRef = useRef(null);
   const ref = useRef(0); //
 
@@ -21,7 +27,6 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler, retry }) => {
   const router = useRouter();
 
   const onBlinkStarted = () => {
-    console.log("on Blink Started");
     ref.current = 1;
     if (onStarted) {
       onStarted();
@@ -32,14 +37,18 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler, retry }) => {
   };
 
   const videoEnded = () => {
-    console.log("videoEnded");
+    // console.log("videoEnded");
   };
 
   const onUserLoses = () => {
-    console.log("onUserLoses");
+    // console.log("onUserLoses");
     if (ref.current !== 0) {
-      if (videoRef.current.currentTime > 10) {
+      if (videoRef.current.currentTime > 150) {
         setVideoPlaying(PATH_TO_VIDEO + VIDEO_WINNING);
+      } else if (videoRef.current.currentTime > 140) {
+        setVideoPlaying(PATH_TO_VIDEO + VIDEO_LOSING);
+      } else if (videoRef.current.currentTime > 120) {
+        setVideoPlaying(PATH_TO_VIDEO + VIDEO_LOSING);
       } else {
         setVideoPlaying(PATH_TO_VIDEO + VIDEO_LOSING);
       }
@@ -125,9 +134,7 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler, retry }) => {
                 ? "flex"
                 : "none",
           }}
-          onClick={() => {
-            router.push("/level-one");
-          }}
+          onClick={onShareHandler}
           className="btn-md bg-black rounded-full  font-bold no-animation text-sm uppercase flex gap-4 justify-center items-center"
         >
           Share

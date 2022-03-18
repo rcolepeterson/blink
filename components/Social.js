@@ -26,7 +26,7 @@ const Social = ({
     window.open(navUrl, "_blank");
   }
   return (
-    <div className="max-w-sm w-full mx-auto">
+    <div className="max-w-sm md:max-w-2xl w-full mx-auto">
       <div className="w-full">
         <div className="mobile-only">
           <Link href={"/"}>
@@ -60,7 +60,7 @@ const Social = ({
         <div className="flex w-full justify-center items-center gap-4">
           <h3 className="text-center numbers">{level}</h3>
         </div>
-        <p className="text-center w-full text-base my-5 font-Raleway">
+        <p className="text-center w-full text-base my-5 font-Raleway md:max-w-sm">
           Take a break and share how long you lasted without blinking and how
           you stacked up against your fellow time wasters.
         </p>
@@ -85,7 +85,7 @@ const Social = ({
       <Link href={"/start"}>
         <div className="flex w-full justify-center">
           <a className="btn-md bg-black rounded-full  no-animation text-sm uppercase flex gap-4 justify-center items-center ">
-            Play Blink Break
+            Play Again
           </a>
         </div>
       </Link>

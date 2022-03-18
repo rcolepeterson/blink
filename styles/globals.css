@@ -62,10 +62,10 @@ a {
 }
 
 @media screen and (min-width: 768px) {
-  .video-circle {
+  /* .video-circle {
     height: 374px;
     width: 374px;
-  }
+  } */
 }
 
 /* #blackcircle {

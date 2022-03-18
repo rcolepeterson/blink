@@ -5,6 +5,7 @@ import Logo from "../components/Logo";
 import Modal from "../components/modal";
 import LeftBar from "../components/LeftBar";
 import Ranking from "../components/Ranking";
+import { useRouter } from "next/router";
 
 // this function returns a random number between 1000 and 10,000
 function getRandomNumber() {
@@ -12,6 +13,7 @@ function getRandomNumber() {
 }
 
 const Home = () => {
+  const router = useRouter();
   const [startTimer, setStartTimer] = useState(false);
   const [score, setScore] = useState(0);
   const [ranking, setRanking] = useState(0);
@@ -62,7 +64,6 @@ const Home = () => {
   }, [runLevel]);
 
   const onLoadedHandler = () => {
-    console.log("OMG we have loaded", blinkloaded);
     setBlinkLoaded(true);
   };
 
@@ -77,6 +78,53 @@ const Home = () => {
     // onBlinkStarted();
   };
 
+  // this function coverts a number to the letter number
+  const getLevel = (num) => {
+    switch (num) {
+      case 1:
+        return "/level-one";
+      case 2:
+        return "/level-two";
+      case 3:
+        return "/level-three";
+      case 4:
+        return "/level-four";
+      case 5:
+        return "/level-five";
+      case 6:
+        return "/level-six";
+      case 7:
+        return "/level-seven";
+      case 8:
+        return "/level-eight";
+      case 9:
+        return "/level-nine";
+      case 10:
+        return "/level-ten";
+      case 11:
+        return "/level-eleven";
+      case 12:
+        return "/level-twelve";
+      case 13:
+        return "/level-thirteen";
+      case 14:
+        return "/level-fourteen";
+      case 15:
+        return "/level-fifteen";
+      case 16:
+        return "/level-sixteen";
+
+      default:
+        return "";
+    }
+  };
+
+  const goToSharePage = () => {
+    let pageName = getLevel(level);
+    console.log();
+    router.push(pageName);
+  };
+
   return (
     <div>
       <Modal isLoaded={blinkloaded}>
@@ -86,11 +134,6 @@ const Home = () => {
           <li>Position your face in the circle</li>
           <li>Blink to test it out then hit start!</li>
         </ul>
-        {/* <p className="text-lg py-6 text-center font-Raleway">
-          Just position your face in the circle, blink to test it out, then
-          click &apos;Start Staring Contest&apos; when you&apos;re ready to
-          rock.
-        </p> */}
       </Modal>
       <div className="p-6 pb-0">
         <Logo />
@@ -102,6 +145,7 @@ const Home = () => {
           onEnded={onBlinkEnded}
           onLoadedHandler={onLoadedHandler}
           retry={resetEverything}
+          onShareHandler={goToSharePage}
         />
         {!ended && (
           <div className="mt-6 md:mt-8 w-full flex justify-center">
