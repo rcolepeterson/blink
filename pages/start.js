@@ -4,6 +4,7 @@ import Timer from "../components/Timer";
 import Logo from "../components/Logo";
 import Modal from "../components/modal";
 import LeftBar from "../components/LeftBar";
+import Ranking from "../components/Ranking";
 
 // this function returns a random number between 1000 and 10,000
 function getRandomNumber() {
@@ -106,13 +107,7 @@ const Home = () => {
       </div>
       {ended && (
         <div className="mt-6">
-          <p className="text-center w-full text-lg mb-2">
-            {" "}
-            Your Global Ranking:
-          </p>
-          <h3 className="text-center w-full numbers mb-2">{ranking}</h3>
-          <p className="text-center w-full uppercase text-xl mb-1"> Out of</p>
-          <h4 className="text-center w-full numbers">300,345</h4>
+          <Ranking score={score} />
         </div>
       )}
     </div>

@@ -7,18 +7,28 @@ const Leaderboard = () => {
   const getCollection = async (collection) => {
     const snapshot = await fire.collection(collection).get();
     const data = snapshot.docs.map((doc) => doc.data());
+    return sortData(data);
+  };
+
+  //this function sorts a collection usin the score property
+
+  const sortData = async (input) => {
+    const data = input;
+    data.sort((a, b) => {
+      return b.score - a.score;
+    });
     return data;
   };
 
-  //this function converts milliseconds into a timestamp
-  const getTimestamp = (mill) => {
-    let date = new Date(mill);
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-    let milliseconds = date.getMilliseconds();
-    let timestamp = minutes + ":" + seconds + ":" + milliseconds;
-    return timestamp;
-  };
+  // //this function converts milliseconds into a timestamp
+  // const getTimestamp = (mill) => {
+  //   let date = new Date(mill);
+  //   let minutes = date.getMinutes();
+  //   let seconds = date.getSeconds();
+  //   let milliseconds = date.getMilliseconds();
+  //   let timestamp = minutes + ":" + seconds + ":" + milliseconds;
+  //   return timestamp;
+  // };
 
   const [users, setUsers] = React.useState([]);
 
@@ -38,8 +48,8 @@ const Leaderboard = () => {
         {users.map((user, i) => {
           return (
             <div className="flex" key={`${i}-leaderboarditem`}>
-              <h3>{user.username}: </h3>
-              <h3 className="pl-4">{getTimestamp(user.ms)}</h3>
+              <h3>{user.name}: </h3>
+              <h3 className="pl-4 ">{user.score}</h3>
             </div>
           );
         })}
