@@ -35,9 +35,9 @@ const Leaderboard = () => {
       </div>
       <div className="text-center w-full mx-auto max-w-sm bg-transparent flex flex-col justify-center items-center px-4 font-Raleway">
         <h2 className="py-6">Don&apos;t Blink Leaderboard</h2>
-        {users.map((user) => {
+        {users.map((user, i) => {
           return (
-            <div className="flex">
+            <div className="flex" key={`${i}-leaderboarditem`}>
               <h3>{user.username}: </h3>
               <h3 className="pl-4">{getTimestamp(user.ms)}</h3>
             </div>
