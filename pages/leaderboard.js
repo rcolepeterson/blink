@@ -1,11 +1,10 @@
 import fire from "../firebase/firebase";
 import React from "react";
 import Logo from "../components/Logo";
-const leaderboard = () => {
+const Leaderboard = () => {
   // this function gets a collection from a firebase firestore database
   // and returns a list of objects
   const getCollection = async (collection) => {
-    // let ref = fire.collection("graffiti").doc("current");
     const snapshot = await fire.collection(collection).get();
     const data = snapshot.docs.map((doc) => doc.data());
     return data;
@@ -14,7 +13,6 @@ const leaderboard = () => {
   //this function converts milliseconds into a timestamp
   const getTimestamp = (mill) => {
     let date = new Date(mill);
-
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
     let milliseconds = date.getMilliseconds();
@@ -50,4 +48,4 @@ const leaderboard = () => {
   );
 };
 
-export default leaderboard;
+export default Leaderboard;
