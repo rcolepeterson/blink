@@ -26,6 +26,7 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler, retry }) => {
     if (onStarted) {
       onStarted();
     }
+    setdorest(false);
     setShowVideo(true);
     videoRef.current.play();
   };

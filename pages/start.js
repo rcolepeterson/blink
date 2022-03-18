@@ -69,11 +69,11 @@ const Home = () => {
     console.log("lets rest everything");
     setStartTimer(false);
     setScore(0);
-
-    setBlinkLoaded(false);
+    setRunLevel(false);
+    setBlinkLoaded(true);
     setEnded(false);
 
-    onBlinkStarted();
+    // onBlinkStarted();
   };
 
   return (

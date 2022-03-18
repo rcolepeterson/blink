@@ -62,7 +62,7 @@ const Blink = ({
   };
 
   useEffect(() => {
-    console.log("we are watching start", startTrackingBlink);
+    console.log("XXXXXXX we are watching start", startTrackingBlink);
     if (startTrackingBlink) {
       startPrediction();
     } else {
@@ -75,7 +75,11 @@ const Blink = ({
   }, []);
 
   useEffect(() => {
-    setShowProfile(true);
+    console.log("reset", reset);
+    if (reset) {
+      setShowProfile(true);
+      running.current = false;
+    }
   }, [reset]);
 
   return (
