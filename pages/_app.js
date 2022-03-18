@@ -62,13 +62,13 @@ function MyApp({ Component, pageProps }) {
             className="object-fit-cover object-bottom "
           ></Image>
         </div>
-        <Layout>
+        <div className="container relative font-nrmlfont mx-auto min-w-full text-white h-screen overflow-hidden">
           {state.loggedIn ? (
             <Component {...pageProps} />
           ) : (
             <SignIn handler={handler} />
           )}
-        </Layout>
+        </div>
       </AppWrapper>
     </>
   );
