@@ -34,7 +34,7 @@ const Leaderboard = () => {
         <Logo />
       </div>
       <div className="text-center w-full mx-auto max-w-sm bg-transparent flex flex-col justify-center items-center px-4 font-Raleway">
-        <h2 className="py-6">Don't Blink Leaderboard</h2>
+        <h2 className="py-6">Don&apos;t Blink Leaderboard</h2>
         {users.map((user) => {
           return (
             <div className="flex">
