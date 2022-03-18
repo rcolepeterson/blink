@@ -26,6 +26,11 @@ const Ranking = ({ score }) => {
     return initials;
   };
 
+  //this function adds commas to a number
+  const addCommas = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   React.useEffect(() => {
     getCollection("leaderboard").then((users) => {
       users.sort((a, b) => {
@@ -45,11 +50,18 @@ const Ranking = ({ score }) => {
   return ranking === 0 ? (
     <p className="text-center w-full text-lg mb-2">Fetching Ranking ...</p>
   ) : (
-    <div>
+    <div className="max-w-sm mx-auto">
       <p className="text-center w-full text-lg mb-2"> Your Global Ranking:</p>
-      <h1 className="text-center w-full numbers mb-2">{ranking}</h1>
-      <p className="text-center w-full uppercase text-xl mb-1"> Out of</p>
-      <h4 className="text-center w-full numbers">{numUsers}</h4>
+      <div className="flex w-full justify-center items-center gap-4">
+        <h2 className="text-center numbers">{ranking}</h2>
+        <p className="text-center uppercase text-xl text-[#681212] font-bold">
+          {" "}
+          of
+        </p>
+        <h2 className="text-center numbers">{numUsers}</h2>
+      </div>
+      <p className="text-center w-full text-lg my-2"> Your Score:</p>
+      <h2 className="text-center numbers">{addCommas(score)}</h2>
     </div>
   );
 };
