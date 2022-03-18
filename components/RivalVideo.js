@@ -43,14 +43,40 @@ const RivalVideo = ({
   const onUserLoses = () => {
     // console.log("onUserLoses");
     if (ref.current !== 0) {
-      if (videoRef.current.currentTime > 150) {
-        setVideoPlaying(PATH_TO_VIDEO + VIDEO_WINNING);
+      if (videoRef.current.currentTime > 160) {
+        setVideoPlaying(PATH_TO_VIDEO + "HappyPuppy_16.mp4");
+      } else if (videoRef.current.currentTime > 150) {
+        setVideoPlaying(PATH_TO_VIDEO + "OstrichSurprise_13_14_15.mp4");
       } else if (videoRef.current.currentTime > 140) {
-        setVideoPlaying(PATH_TO_VIDEO + VIDEO_LOSING);
+        setVideoPlaying(PATH_TO_VIDEO + "OstrichSurprise_13_14_15.mp4");
+      } else if (videoRef.current.currentTime > 130) {
+        setVideoPlaying(PATH_TO_VIDEO + "OstrichSurprise_13_14_15.mp4");
       } else if (videoRef.current.currentTime > 120) {
-        setVideoPlaying(PATH_TO_VIDEO + VIDEO_LOSING);
+        setVideoPlaying(PATH_TO_VIDEO + "OMGERDbird_9_10_11_12.mp4");
+      } else if (videoRef.current.currentTime > 110) {
+        setVideoPlaying(PATH_TO_VIDEO + "OMGERDbird_9_10_11_12.mp4");
+      } else if (videoRef.current.currentTime > 100) {
+        setVideoPlaying(PATH_TO_VIDEO + "OMGERDbird_9_10_11_12.mp4");
+      } else if (videoRef.current.currentTime > 90) {
+        setVideoPlaying(PATH_TO_VIDEO + "NoiceSeals_6_7_8.mp4");
+      } else if (videoRef.current.currentTime > 80) {
+        setVideoPlaying(PATH_TO_VIDEO + "NoiceSeals_6_7_8.mp4");
+      } else if (videoRef.current.currentTime > 70) {
+        setVideoPlaying(PATH_TO_VIDEO + "NoiceSeals_6_7_8.mp4");
+      } else if (videoRef.current.currentTime > 60) {
+        setVideoPlaying(PATH_TO_VIDEO + "NoiceSeals_6_7_8.mp4");
+      } else if (videoRef.current.currentTime > 50) {
+        setVideoPlaying(PATH_TO_VIDEO + "ConsolingCat_3_4_5.mp4");
+      } else if (videoRef.current.currentTime > 40) {
+        setVideoPlaying(PATH_TO_VIDEO + "ConsolingCat_3_4_5.mp4");
+      } else if (videoRef.current.currentTime > 30) {
+        setVideoPlaying(PATH_TO_VIDEO + "ConsolingCat_3_4_5.mp4");
+      } else if (videoRef.current.currentTime > 20) {
+        setVideoPlaying(PATH_TO_VIDEO + "ChimpCallCenter_1_2.mp4");
+      } else if (videoRef.current.currentTime > 10) {
+        setVideoPlaying(PATH_TO_VIDEO + "ChimpCallCenter_1_2.mp4");
       } else {
-        setVideoPlaying(PATH_TO_VIDEO + VIDEO_LOSING);
+        setVideoPlaying(PATH_TO_VIDEO + "ChimpCallCenter_1_2.mp4");
       }
       onBlinkEndedRef.current();
       ref.current = 0;
