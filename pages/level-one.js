@@ -7,6 +7,7 @@ const Element = () => {
     <>
       <NextSeo
         openGraph={{
+          url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/level-one",
           images: [
             {
               url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/SocialImage_1.png",
@@ -23,6 +24,7 @@ const Element = () => {
       </div>
       <Social
         level={"Level #1"}
+        pagename={"level-one"}
         animalname={"cat"}
         headerImage={"/SocialImage_1.png"}
         headerImageDesktop={"/SocialImage_1.png"}
