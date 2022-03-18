@@ -4,16 +4,14 @@ import Router from "next/router";
 import Image from "next/image";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
+import SEO from "../next-seo.config";
 
-const Social = () => {
-  const URL =
-    "https://paint-ui-git-speaking-in-color-version-two-rcolepeterson.vercel.app/";
-  const title =
-    "Well, that was a successful waste of time. @kitkat just helped me take a break for a staring contest. I was eventually defeated by this [animal name]! 👁 👁 😵‍💫 ";
+const Social = ({ level = "Level #1", animalname = "cat" }) => {
+  const URL = SEO.openGraph.url;
+  const title = `Well, that was a successful waste of time. @kitkat just helped me take a break for a staring contest. I was eventually defeated by this ${animalname}! 👁 👁 😵‍💫 `;
   const hashtags = "blinkbreak,kitkat,staringcontest";
   const shareOnTwitter = () => {
     let l = `https://twitter.com/share?url=${URL}&text=${title}&hashtags=${hashtags}`;
-
     window.open(l, "_blank");
   };
 
@@ -40,7 +38,7 @@ const Social = () => {
           Congratulations on reaching:
         </p>
         <div className="flex w-full justify-center items-center gap-4">
-          <h3 className="text-center numbers">Level #1</h3>
+          <h3 className="text-center numbers">{level}</h3>
         </div>
         <p className="text-center w-full text-base my-5 font-Raleway">
           Take a break and share how long you lasted without blinking and how
