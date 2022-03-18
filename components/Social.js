@@ -6,7 +6,12 @@ import { NextSeo } from "next-seo";
 import Link from "next/link";
 import SEO from "../next-seo.config";
 
-const Social = ({ level = "Level #1", animalname = "cat" }) => {
+const Social = ({
+  level = "Level #1",
+  animalname = "cat",
+  headerImage = "/dont-blink-kit-kat-level-eleven.png",
+  headerImageDesktop = "/dont-blink-kit-kat-level-eleven.png",
+}) => {
   const URL = SEO.openGraph.url;
   const title = `Well, that was a successful waste of time. @kitkat just helped me take a break for a staring contest. I was eventually defeated by this ${animalname}! 👁 👁 😵‍💫 `;
   const hashtags = "blinkbreak,kitkat,staringcontest";
@@ -22,6 +27,16 @@ const Social = ({ level = "Level #1", animalname = "cat" }) => {
   return (
     <div className="max-w-sm w-full mx-auto">
       <div className="w-full">
+        <Link href={"/"}>
+          <Image
+            src={headerImage}
+            layout="responsive"
+            objectFit="contain"
+            alt="dont blink kit kat level eleven"
+            width={748}
+            height={392}
+          />
+        </Link>
         <Link href={"/"}>
           <Image
             src="/dont-blink-kit-kat-level-eleven.png"
