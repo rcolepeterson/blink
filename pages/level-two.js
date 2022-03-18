@@ -3,20 +3,19 @@ import Social from "../components/Social";
 import { NextSeo } from "next-seo";
 import Logo from "../components/Logo";
 const Element = () => {
-  const pageName = "level-one";
   return (
     <>
       <NextSeo
-        title="The Don't Blink Break | Level #1"
-        canonical="https://blink-git-blink-dev-rcolepeterson.vercel.app/level-one/"
+        title="The Don't Blink Break | Level #2"
+        canonical="https://blink-git-blink-dev-rcolepeterson.vercel.app/level-two/"
         openGraph={{
-          url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/level-one/",
+          url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/level-two/",
           images: [
             {
-              url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/SocialImage_1.png",
+              url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/SocialImage_2.png",
               width: 748,
               height: 392,
-              alt: "dont-blink-break-kitkat-level-one",
+              alt: "dont-blink-break-kitkat-level-two",
               type: "image/jpeg",
             },
           ],
@@ -26,11 +25,11 @@ const Element = () => {
         <Logo />
       </div>
       <Social
-        level={"Level #1"}
-        pagename={"level-one"}
+        level={"Level #2"}
+        pagename={"level-two"}
         animalname={"cat"}
-        headerImage={"/SocialImage_1.png"}
-        headerImageDesktop={"/DesktopShare_1.png"}
+        headerImage={"/SocialImage_2.png"}
+        headerImageDesktop={"/DesktopShare_2.png"}
       />
     </>
   );

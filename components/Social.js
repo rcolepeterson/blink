@@ -28,26 +28,30 @@ const Social = ({
   return (
     <div className="max-w-sm w-full mx-auto">
       <div className="w-full">
-        <Link href={"/"}>
-          <Image
-            src={headerImage}
-            layout="responsive"
-            objectFit="contain"
-            alt="dont blink kit kat level eleven"
-            width={748}
-            height={392}
-          />
-        </Link>
-        <Link href={"/"}>
-          <Image
-            src={headerImageDesktop}
-            layout="responsive"
-            objectFit="contain"
-            alt="dont blink kit kat level eleven"
-            width={748}
-            height={392}
-          />
-        </Link>
+        <div className="mobile-only">
+          <Link href={"/"}>
+            <Image
+              src={headerImage}
+              layout="responsive"
+              objectFit="contain"
+              alt="dont blink kit kat level eleven"
+              width={748}
+              height={392}
+            />
+          </Link>
+        </div>
+        <div className="desktop-only-block">
+          <Link href={"/"}>
+            <Image
+              src={headerImageDesktop}
+              layout="responsive"
+              objectFit="contain"
+              alt="dont blink kit kat level eleven"
+              width={748}
+              height={392}
+            />
+          </Link>
+        </div>
       </div>
       <div className="text-center w-full mx-auto  bg-transparent flex flex-col justify-center items-center px-4 ">
         <p className="text-center w-full text-xl py-4">
