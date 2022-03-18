@@ -6,6 +6,7 @@ const Blink = ({
   onBlinkStarted,
   onUserLoses,
   onLoadedHandler,
+  reset,
 }) => {
   const videoRef = React.useRef();
   const running = React.useRef(0);
@@ -72,6 +73,10 @@ const Blink = ({
   useEffect(() => {
     init();
   }, []);
+
+  useEffect(() => {
+    setShowProfile(true);
+  }, [reset]);
 
   return (
     <div className="flex mx-auto  md:p-0 overflow-hidden relative">

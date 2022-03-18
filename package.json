@@ -13,6 +13,7 @@
     "@tensorflow/tfjs-backend-webgl": "^3.12.0",
     "@tensorflow/tfjs-core": "^3.12.0",
     "blink-detection": "^1.2.1",
+    "canvas-confetti": "^1.5.1",
     "daisyui": "^1.22.0",
     "firebase": "^8.10.0",
     "next": "12.0.7",

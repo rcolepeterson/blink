@@ -5,13 +5,13 @@ const PATH_TO_VIDEO = "/";
 const VIDEO_WINNING = "WinningMessaging3.mp4";
 const VIDEO_LOSING = "LoserMessaging_2.mp4";
 const VIDEO_PLAYING = "Square4.mp4";
-const RivalVideo = ({ onStarted, onEnded, onLoadedHandler }) => {
+const RivalVideo = ({ onStarted, onEnded, onLoadedHandler, retry }) => {
   const videoRef = useRef(null);
   const ref = useRef(0); //
 
   const onBlinkEndedRef = useRef(0); //
   onBlinkEndedRef.current = onEnded;
-
+  const [doreset, setdorest] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const [videoPlaying, setVideoPlaying] = useState(
@@ -67,6 +67,7 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler }) => {
           onBlinkStarted={onBlinkStarted}
           onUserLoses={onUserLoses}
           onLoadedHandler={onLoadedHandler}
+          reset={doreset}
         />
       </div>
 
@@ -89,7 +90,11 @@ const RivalVideo = ({ onStarted, onEnded, onLoadedHandler }) => {
                 : "none",
           }}
           onClick={() => {
-            router.push("/");
+            setShowVideo(false);
+            setVideoPlaying(PATH_TO_VIDEO + VIDEO_PLAYING);
+            setGameStarted(false);
+            setdorest(true);
+            retry();
           }}
           className="btn-md bg-black rounded-full  font-bold no-animation text-sm uppercase flex gap-4 justify-center items-center "
         >

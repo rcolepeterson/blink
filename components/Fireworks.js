@@ -9,3 +9,5 @@ const FireWorks = ({ level }) => {
 };
 
 export default FireWorks;
+
+//https://www.kirilv.com/canvas-confetti/

@@ -25,6 +25,7 @@ const Home = () => {
   };
 
   const onBlinkEnded = () => {
+    console.log("onBlinkEnded");
     setStartTimer(false);
     setRunning(false);
     setRunLevel(false);
@@ -60,8 +61,19 @@ const Home = () => {
   }, [runLevel]);
 
   const onLoadedHandler = () => {
-    console.log("OMG we have loasded", blinkloaded);
+    console.log("OMG we have loaded", blinkloaded);
     setBlinkLoaded(true);
+  };
+
+  const resetEverything = () => {
+    console.log("lets rest everything");
+    setStartTimer(false);
+    setScore(0);
+
+    setBlinkLoaded(false);
+    setEnded(false);
+
+    onBlinkStarted();
   };
 
   return (
@@ -83,6 +95,7 @@ const Home = () => {
           onStarted={onBlinkStarted}
           onEnded={onBlinkEnded}
           onLoadedHandler={onLoadedHandler}
+          retry={resetEverything}
         />
         {!ended && (
           <div className="mt-6 md:mt-8 w-full flex justify-center">
