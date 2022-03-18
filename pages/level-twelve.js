@@ -7,16 +7,16 @@ const Element = () => {
   return (
     <>
       <NextSeo
-        title="The Don't Blink Break | Level #1"
-        canonical="https://blink-git-blink-dev-rcolepeterson.vercel.app/level-one/"
+        title="The Don't Blink Break | Level #12"
+        canonical="https://blink-git-blink-dev-rcolepeterson.vercel.app/level-twelve/"
         openGraph={{
-          url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/level-one/",
+          url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/level-twelve/",
           images: [
             {
-              url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/SocialImage_1.png",
+              url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/SocialImage_12.png",
               width: 748,
               height: 392,
-              alt: "dont-blink-break-kitkat-level-one",
+              alt: "dont-blink-break-kitkat-level-twelve",
               type: "image/jpeg",
             },
           ],
@@ -26,11 +26,11 @@ const Element = () => {
         <Logo />
       </div>
       <Social
-        level={"Level #1"}
-        pagename={"level-one"}
-        animalname={"cat"}
-        headerImage={"/SocialImage_1.png"}
-        headerImageDesktop={"/DesktopShare_1.png"}
+        level={"Level #12"}
+        pagename={"level-twelve"}
+        animalname={"slender loris"}
+        headerImage={"/SocialImage_12.png"}
+        headerImageDesktop={"/DesktopShare_12.png"}
       />
     </>
   );

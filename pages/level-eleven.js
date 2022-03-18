@@ -15,7 +15,7 @@ const Element = () => {
               url: "https://blink-git-blink-dev-rcolepeterson.vercel.app/SocialImage_11.png",
               width: 748,
               height: 392,
-              alt: "dont-blink-break-kitkat-level-one",
+              alt: "dont-blink-break-kitkat-level-eleven",
               type: "image/jpeg",
             },
           ],

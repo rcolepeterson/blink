@@ -25,9 +25,9 @@ const Element = () => {
         <Logo />
       </div>
       <Social
-        level={"Level #1"}
+        level={"Level #3"}
         pagename={"level-three"}
-        animalname={"cat"}
+        animalname={"sheep"}
         headerImage={"/SocialImage_3.png"}
         headerImageDesktop={"/DesktopShare_3.png"}
       />

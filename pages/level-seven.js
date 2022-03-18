@@ -27,7 +27,7 @@ const Element = () => {
       <Social
         level={"Level #7"}
         pagename={"level-seven"}
-        animalname={"cat"}
+        animalname={"ring-tailed lemur"}
         headerImage={"/SocialImage_7.png"}
         headerImageDesktop={"/DesktopShare_7.png"}
       />
