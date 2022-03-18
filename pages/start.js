@@ -72,7 +72,7 @@ const Home = () => {
     setRunLevel(false);
     setBlinkLoaded(true);
     setEnded(false);
-
+    setLevel(1);
     // onBlinkStarted();
   };
 

@@ -42,6 +42,42 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Dont Blink</title>
+        <meta property="og:site_name" content="Don't Blink" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://blink-git-blink-dev-rcolepeterson.vercel.app/"
+        />
+        <meta property="og:title" content="Don't Blink" />
+        <meta
+          property="og:description"
+          content="Delighting consumers all over the world, KitKat is a favourite chocolate treat thanks to light wafers and delicious chocolate."
+        />
+        <meta
+          property="og:image"
+          content="https://www.nestle.com/sites/default/files/asset-library/publishingimages/brands/chocolate-confectionery/kitkat-brand-page.png"
+        />
+        <meta
+          name="facebook-domain-verification"
+          content="e3xkchl0xhxa60w4dp6kv0weton3bk"
+        />
+        <meta
+          name="google-site-verification"
+          content="Az9x5K8F_qzu958f3otEIhtZxYwAKlW6MKymJuHD99o"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@nestle" />
+        <meta
+          name="twitter:description"
+          content="Delighting consumers all over the world, KitKat is a favourite chocolate treat thanks to light wafers and delicious chocolate."
+        />
+        <meta name="twitter:title" content="KitKat" />
+        <meta
+          name="twitter:image"
+          content="https://www.nestle.com/sites/default/files/asset-library/publishingimages/brands/chocolate-confectionery/kitkat-brand-page.png"
+        />
+        <meta name="MobileOptimized" content="width" />
+        <meta name="HandheldFriendly" content="true" />
       </Head>
       <AppWrapper>
         <div className="desktop-only">

@@ -49,6 +49,7 @@ const Home = () => {
         setLevel((prevTime) => prevTime + 1);
       }, 10000);
     } else if (!running) {
+      setLevel(1);
       clearInterval(interval);
     }
     return () => clearInterval(interval);
