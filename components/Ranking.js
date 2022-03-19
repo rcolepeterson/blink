@@ -37,12 +37,10 @@ const Ranking = ({ score }) => {
         return b.score - a.score;
       });
       let initials = getInitials();
-      console.log(initials);
+
       addItem("leaderboard", { name: initials, score: score });
       setNumUsers(users.length + 1);
       let t = users.filter((user) => user.score > score);
-      console.log(t);
-
       setRanking(t.length + 1);
     });
   }, []);
