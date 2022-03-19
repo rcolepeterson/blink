@@ -26,7 +26,7 @@ const Social = ({
     window.open(navUrl, "_blank");
   }
   return (
-    <div className="max-w-sm md:max-w-2xl w-full mx-auto">
+    <div className="max-w-sm xl:max-w-2xl w-full mx-auto">
       <div className="w-full">
         <div className="mobile-only">
           <Link href={"/"}>
