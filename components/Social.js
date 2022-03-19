@@ -84,7 +84,7 @@ const Social = ({
       </div>
       <Link href={"/start"}>
         <div className="flex w-full justify-center">
-          <a className="btn-md bg-black rounded-full  no-animation text-sm uppercase flex gap-4 justify-center items-center ">
+          <a className="btn-md bg-black rounded-full  no-animation text-sm uppercase flex gap-4 justify-center items-center cursor-pointer ">
             Play Again
           </a>
         </div>
