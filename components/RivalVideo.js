@@ -43,7 +43,7 @@ const RivalVideo = ({
 
   const onUserLoses = () => {
     if (ref.current !== 0) {
-      console.log("onUserLoses", videoRef.current.currentTime, getlevel());
+      console.log("onUserLoses", videoRef.current.currentTime);
       if (videoRef.current.currentTime > 160) {
         setVideoPlaying(PATH_TO_VIDEO + "HappyPuppy_16.mp4");
       } else if (videoRef.current.currentTime > 150) {
@@ -160,7 +160,7 @@ const RivalVideo = ({
         <button
           style={{
             display:
-              videoPlaying !== PATH_TO_VIDEO + VIDEO_LOSING ? "flex" : "none",
+              videoPlaying !== PATH_TO_VIDEO + VIDEO_PLAYING ? "flex" : "none",
           }}
           onClick={onShareHandler}
           className="btn-md bg-black rounded-full  font-bold no-animation text-sm uppercase flex gap-4 justify-center items-center"
